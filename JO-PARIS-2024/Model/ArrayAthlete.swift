@@ -9,8 +9,9 @@ import Foundation
 
 // Structure des athlètes
 
-struct Athletes: Identifiable {
+struct Athlete: Identifiable {
     var id: UUID = UUID()
     var nameAthlete: String
-    
+    var photoAthlete: String?
+    var paralypiqueAthete: Bool
 }

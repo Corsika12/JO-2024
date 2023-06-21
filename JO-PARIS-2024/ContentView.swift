@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// --------  Ecran de lancement  --------
+
 struct ContentView: View {
     var body: some View {
         VStack {

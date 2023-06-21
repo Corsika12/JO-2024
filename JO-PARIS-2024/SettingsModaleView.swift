@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+// --------  MODALE AVEC LES PARAMETRES  --------
+
 struct SettingsModaleView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

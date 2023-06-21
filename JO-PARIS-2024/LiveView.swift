@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// --------  Ecran des vidéos en live + temps forts  --------
+
 struct LiveView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

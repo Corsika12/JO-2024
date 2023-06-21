@@ -9,12 +9,12 @@ import Foundation
 
 // Structure des événements
 
-struct Events: Identifiable {
+struct Event: Identifiable {
     var id: UUID = UUID()
     var sport: String // Discipline
     var paralympique: Bool // Identifications des événements paralympiques
     var dateEvent: Date // Date de la compétition
-    var hourEvent: Date  // à voir si besoin d'une énumération ou un autre modèle de date ?
+    var hourEvent: Date?  // à voir si besoin d'une énumération ou un autre modèle de date ?
     // Voir pour les scores, podiums... ?
     
     

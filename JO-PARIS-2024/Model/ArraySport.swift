@@ -9,7 +9,8 @@ import Foundation
 
 // Structure des sports
 
-struct Sports: Identifiable {
+struct Sport: Identifiable {
     var id: UUID = UUID()
     var sport: String // Enumérations des 54 sports ?
+    var iconSport: String // Logo du sport
 }

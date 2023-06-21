@@ -9,13 +9,13 @@ import Foundation
 
 // Structure des utilisateurs, avec les mots de passe
 
-struct Users: Identifiable {
+struct User: Identifiable {
     var id: UUID = UUID()
-    var userName: String
-    var userImage: String
+    var userName: String?
+    var userImage: String?
 
-    var userEmail : String
-    var userPassword: String
+    var userEmail : String?
+    var userPassword: String?
 }
 
 

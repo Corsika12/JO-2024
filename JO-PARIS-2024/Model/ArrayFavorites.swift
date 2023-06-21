@@ -20,6 +20,7 @@ struct Favorites: Identifiable {
 /* ---------  QUESTIONS  ---------
  
  Jointures entre les tables -> à étudier
+ https://stackoverflow.com/questions/63783915/how-to-join-two-core-data-tables
  
  Comment laisser la possibilité à l’utilisateur de choisir plusieurs athlètes, sports, pays
 

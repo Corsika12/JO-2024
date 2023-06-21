@@ -18,12 +18,12 @@
 		0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88372A433C2A001DF0B0 /* NewsView.swift */; };
 		0CDD883A2A433C55001DF0B0 /* MyVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88392A433C55001DF0B0 /* MyVideosView.swift */; };
 		0CDD883C2A433CBB001DF0B0 /* SettingsModaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */; };
-		0CDD883E2A433D4E001DF0B0 /* ArrayUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883D2A433D4E001DF0B0 /* ArrayUsers.swift */; };
-		0CDD88402A433DE1001DF0B0 /* ArrayEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883F2A433DE1001DF0B0 /* ArrayEvents.swift */; };
+		0CDD883E2A433D4E001DF0B0 /* ArrayUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */; };
+		0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */; };
 		0CDD88422A433E0E001DF0B0 /* ArrayFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */; };
 		0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */; };
-		0CDD88462A4343DC001DF0B0 /* ArraySports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88452A4343DC001DF0B0 /* ArraySports.swift */; };
-		0CDD88482A434424001DF0B0 /* ArrayCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88472A434424001DF0B0 /* ArrayCountries.swift */; };
+		0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88452A4343DC001DF0B0 /* ArraySport.swift */; };
+		0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88472A434424001DF0B0 /* ArrayCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,12 +39,12 @@
 		0CDD88372A433C2A001DF0B0 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		0CDD88392A433C55001DF0B0 /* MyVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVideosView.swift; sourceTree = "<group>"; };
 		0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModaleView.swift; sourceTree = "<group>"; };
-		0CDD883D2A433D4E001DF0B0 /* ArrayUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUsers.swift; sourceTree = "<group>"; };
-		0CDD883F2A433DE1001DF0B0 /* ArrayEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEvents.swift; sourceTree = "<group>"; };
+		0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUser.swift; sourceTree = "<group>"; };
+		0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEvent.swift; sourceTree = "<group>"; };
 		0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFavorites.swift; sourceTree = "<group>"; };
 		0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayAthlete.swift; sourceTree = "<group>"; };
-		0CDD88452A4343DC001DF0B0 /* ArraySports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySports.swift; sourceTree = "<group>"; };
-		0CDD88472A434424001DF0B0 /* ArrayCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCountries.swift; sourceTree = "<group>"; };
+		0CDD88452A4343DC001DF0B0 /* ArraySport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySport.swift; sourceTree = "<group>"; };
+		0CDD88472A434424001DF0B0 /* ArrayCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCountry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,12 +128,12 @@
 		0CDD882E2A4338AE001DF0B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0CDD883D2A433D4E001DF0B0 /* ArrayUsers.swift */,
-				0CDD88472A434424001DF0B0 /* ArrayCountries.swift */,
-				0CDD88452A4343DC001DF0B0 /* ArraySports.swift */,
+				0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */,
+				0CDD88472A434424001DF0B0 /* ArrayCountry.swift */,
+				0CDD88452A4343DC001DF0B0 /* ArraySport.swift */,
 				0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */,
 				0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */,
-				0CDD883F2A433DE1001DF0B0 /* ArrayEvents.swift */,
+				0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,18 +210,18 @@
 			files = (
 				0CDD883A2A433C55001DF0B0 /* MyVideosView.swift in Sources */,
 				0CDD88362A433BED001DF0B0 /* LiveView.swift in Sources */,
-				0CDD88402A433DE1001DF0B0 /* ArrayEvents.swift in Sources */,
+				0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */,
 				0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */,
 				0CDD883C2A433CBB001DF0B0 /* SettingsModaleView.swift in Sources */,
-				0CDD883E2A433D4E001DF0B0 /* ArrayUsers.swift in Sources */,
+				0CDD883E2A433D4E001DF0B0 /* ArrayUser.swift in Sources */,
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
 				0CDD88422A433E0E001DF0B0 /* ArrayFavorites.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
-				0CDD88482A434424001DF0B0 /* ArrayCountries.swift in Sources */,
-				0CDD88462A4343DC001DF0B0 /* ArraySports.swift in Sources */,
+				0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */,
+				0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */,
 				0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
