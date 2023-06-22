@@ -63,7 +63,10 @@ let handball = Sport(sport: "Handball", iconSport: "figure.handball")
 //Sports Equestres
 //Surf
 //Taekwondo
-//Tennis
+
+
+
+let tennis = Sport(sport: "Tennis", iconSport: "tennis.racket")
 //Tennis de table
 //Tir
 let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery")

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C4600B12A4499FC003F7108 /* Paris2024-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */; };
+		0C4600B32A44A06D003F7108 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B22A44A06D003F7108 /* AddView.swift */; };
+		0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B42A44A1D1003F7108 /* SportProfilView.swift */; };
+		0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B62A44A298003F7108 /* AthleteProfilView.swift */; };
+		0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B82A44A350003F7108 /* CountryProfilView.swift */; };
 		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
 		0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */; };
 		0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881F2A433845001DF0B0 /* ContentView.swift */; };
@@ -30,6 +34,10 @@
 /* Begin PBXFileReference section */
 		0C4600AF2A4497F6003F7108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Paris2024-Variable.ttf"; sourceTree = "<group>"; };
+		0C4600B22A44A06D003F7108 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		0C4600B42A44A1D1003F7108 /* SportProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportProfilView.swift; sourceTree = "<group>"; };
+		0C4600B62A44A298003F7108 /* AthleteProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteProfilView.swift; sourceTree = "<group>"; };
+		0C4600B82A44A350003F7108 /* CountryProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProfilView.swift; sourceTree = "<group>"; };
 		0C7A10BD2A4473ED00B3298F /* athlete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = athlete.json; sourceTree = "<group>"; };
 		0CDD881A2A433845001DF0B0 /* JO-PARIS-2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JO-PARIS-2024.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JO_PARIS_2024App.swift; sourceTree = "<group>"; };
@@ -103,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */,
+				0C4600B62A44A298003F7108 /* AthleteProfilView.swift */,
+				0C4600B82A44A350003F7108 /* CountryProfilView.swift */,
+				0C4600B42A44A1D1003F7108 /* SportProfilView.swift */,
 				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
 				0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */,
 				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
@@ -118,6 +129,7 @@
 		0CDD882C2A433875001DF0B0 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0C4600B22A44A06D003F7108 /* AddView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -217,6 +229,8 @@
 			files = (
 				0CDD883A2A433C55001DF0B0 /* MyVideosView.swift in Sources */,
 				0CDD88362A433BED001DF0B0 /* LiveView.swift in Sources */,
+				0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */,
+				0C4600B32A44A06D003F7108 /* AddView.swift in Sources */,
 				0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */,
 				0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */,
 				0CDD883C2A433CBB001DF0B0 /* SettingsModaleView.swift in Sources */,
@@ -224,11 +238,13 @@
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
+				0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
 				0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */,
 				0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */,
 				0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */,
+				0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
