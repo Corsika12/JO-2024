@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct JO_PARIS_2024App: App {
     var body: some Scene {
         WindowGroup {
