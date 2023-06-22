@@ -18,7 +18,7 @@ struct Sport: Identifiable {
 
 
 
-let athetisme = Sport(name: "Athlétisme", iconSport: "")
+let athetisme = Sport(sport: "Athlétisme", iconSport: "")
 
 /*
 Aviron
@@ -29,7 +29,7 @@ BMX freestyle
 BMX race
 */
  
-let Boxe = Sport(sport: "Boxe", iconSport: "figure.boxing")
+let boxing = Sport(sport: "Boxe", iconSport: "figure.boxing")
 
 /*
 Breaking
@@ -46,37 +46,38 @@ let escrime = Sport(sport: "Escrime", iconSport: "figure.fencing")
 // Football
 
 let golf = Sport(sport: "Golf", iconSport: "figure.golf")
-Gymnastique artistique
-Gymnastique rythmique
-Haltérophilie
+//Gymnastique artistique
+//Gymnastique rythmique
+//Haltérophilie
 let handball = Sport(sport: "Handball", iconSport: "figure.handball")
-Hockey
-Judo
-Lutte
-Natation
-Natation artistique
-Natation marathon
-Pentathlon moderne
-Plongeon
-Rugby
-Skateboard
-Sports Equestres
-Surf
-Taekwondo
-Tennis
-Tennis de table
-Tir
+//Hockey
+//Judo
+//Lutte
+//Natation
+//Natation artistique
+//Natation marathon
+//Pentathlon moderne
+//Plongeon
+//Rugby
+//Skateboard
+//Sports Equestres
+//Surf
+//Taekwondo
+//Tennis
+//Tennis de table
+//Tir
 let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery")
-Trampoline
-Triathlon
-Voile
-Volleyball
-Volleyball de plage
-VTT
-Waterpolo
+
+//Trampoline
+//Triathlon
+//Voile
+//Volleyball
+//Volleyball de plage
+//VTT
+//Waterpolo
 
 
-let sports : [Sport] = [climbing, boxing, archery, escrime, golf, handball]
+let sports : [Sport] = [athetisme, climbing, boxing, archery, escrime, golf, handball]
 
 var favoriteSports : [Sport] = []
 

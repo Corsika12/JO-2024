@@ -1,0 +1,35 @@
+[
+    {
+        "nom": "Marcell Jacobs",
+        "pays": "ITA",
+        "discipline": "Athletisme",
+        "epreuve": "100 m hommes",
+        "medaille": ""
+    },
+    {
+        "nom": "Fred Kerley",
+        "pays": "USA",
+        "discipline": "Athletisme",
+        "epreuve": "100 m hommes",
+        "medaille": ""
+    },
+    {
+        "nom": "Andre De Grasse",
+        "pays": "CAN",
+        "discipline": "Athletisme",
+        "epreuve": "100 m hommes",
+        "medaille": ""
+    }
+    
+]
+
+
+ 
+ 
+ 
+ /* --------  Tuto  --------
+ 
+ Pour convertir de JSON pour obtenir la structure correspondante dans Swift
+ https://app.quicktype.io/
+  
+*/

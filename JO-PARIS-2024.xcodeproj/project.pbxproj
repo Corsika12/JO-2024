@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
 		0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */; };
 		0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881F2A433845001DF0B0 /* ContentView.swift */; };
 		0CDD88222A433846001DF0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDD88212A433846001DF0B0 /* Assets.xcassets */; };
@@ -20,13 +21,13 @@
 		0CDD883C2A433CBB001DF0B0 /* SettingsModaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */; };
 		0CDD883E2A433D4E001DF0B0 /* ArrayUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */; };
 		0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */; };
-		0CDD88422A433E0E001DF0B0 /* ArrayFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */; };
 		0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */; };
 		0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88452A4343DC001DF0B0 /* ArraySport.swift */; };
 		0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD88472A434424001DF0B0 /* ArrayCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C7A10BD2A4473ED00B3298F /* athlete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = athlete.json; sourceTree = "<group>"; };
 		0CDD881A2A433845001DF0B0 /* JO-PARIS-2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JO-PARIS-2024.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JO_PARIS_2024App.swift; sourceTree = "<group>"; };
 		0CDD881F2A433845001DF0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModaleView.swift; sourceTree = "<group>"; };
 		0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUser.swift; sourceTree = "<group>"; };
 		0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEvent.swift; sourceTree = "<group>"; };
-		0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFavorites.swift; sourceTree = "<group>"; };
 		0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayAthlete.swift; sourceTree = "<group>"; };
 		0CDD88452A4343DC001DF0B0 /* ArraySport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySport.swift; sourceTree = "<group>"; };
 		0CDD88472A434424001DF0B0 /* ArrayCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCountry.swift; sourceTree = "<group>"; };
@@ -81,15 +81,6 @@
 				0CDD882D2A43389B001DF0B0 /* Extension */,
 				0CDD882C2A433875001DF0B0 /* Buttons */,
 				0CDD882B2A433867001DF0B0 /* Views */,
-				0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */,
-				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
-				0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */,
-				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
-				0CDD88352A433BED001DF0B0 /* LiveView.swift */,
-				0CDD88332A433BD1001DF0B0 /* EventsView.swift */,
-				0CDD88312A433BC2001DF0B0 /* ProfilView.swift */,
-				0CDD882F2A433B9C001DF0B0 /* TabBarView.swift */,
-				0CDD881F2A433845001DF0B0 /* ContentView.swift */,
 				0CDD88212A433846001DF0B0 /* Assets.xcassets */,
 				0CDD88232A433846001DF0B0 /* Preview Content */,
 			);
@@ -107,6 +98,15 @@
 		0CDD882B2A433867001DF0B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */,
+				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
+				0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */,
+				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
+				0CDD88352A433BED001DF0B0 /* LiveView.swift */,
+				0CDD88332A433BD1001DF0B0 /* EventsView.swift */,
+				0CDD88312A433BC2001DF0B0 /* ProfilView.swift */,
+				0CDD882F2A433B9C001DF0B0 /* TabBarView.swift */,
+				0CDD881F2A433845001DF0B0 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,8 +132,8 @@
 				0CDD88472A434424001DF0B0 /* ArrayCountry.swift */,
 				0CDD88452A4343DC001DF0B0 /* ArraySport.swift */,
 				0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */,
-				0CDD88412A433E0E001DF0B0 /* ArrayFavorites.swift */,
 				0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */,
+				0C7A10BD2A4473ED00B3298F /* athlete.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +198,7 @@
 			files = (
 				0CDD88252A433846001DF0B0 /* Preview Assets.xcassets in Resources */,
 				0CDD88222A433846001DF0B0 /* Assets.xcassets in Resources */,
+				0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +218,6 @@
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
-				0CDD88422A433E0E001DF0B0 /* ArrayFavorites.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
 				0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */,
