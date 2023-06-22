@@ -9,6 +9,7 @@ import SwiftUI
 
 
 // --------  MODALE AVEC LES PARAMETRES  --------
+// by 
 
 struct SettingsModaleView: View {
     var body: some View {

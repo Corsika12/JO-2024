@@ -8,6 +8,7 @@
 import SwiftUI
 
 // --------  Ecran de profil de l'utilisateur  --------
+// by Clara
 
 struct ProfilView: View {
     var body: some View {

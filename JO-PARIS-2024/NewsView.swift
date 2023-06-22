@@ -8,7 +8,7 @@
 import SwiftUI
 
 // --------  Ecran des actualités  --------
-
+// by Rémy
 
 struct NewsView: View {
     var body: some View {

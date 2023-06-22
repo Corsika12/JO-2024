@@ -8,6 +8,7 @@
 import SwiftUI
 
 // --------  Tab Bar pour tous les écrans  --------
+// by Manu
 
 struct TabBarView: View {
     var body: some View {

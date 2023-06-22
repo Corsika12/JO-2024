@@ -15,3 +15,7 @@ struct Athlete: Identifiable {
     var photoAthlete: String?
     var paralypiqueAthete: Bool
 }
+
+
+// athlete favoris.append
+

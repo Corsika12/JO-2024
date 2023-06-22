@@ -8,6 +8,7 @@
 import SwiftUI
 
 // --------  Ecran des vidéos en live + temps forts  --------
+// by Hamza
 
 struct LiveView: View {
     var body: some View {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 // --------  Ecran de lancement  --------
+// by
+
 
 struct ContentView: View {
     var body: some View {

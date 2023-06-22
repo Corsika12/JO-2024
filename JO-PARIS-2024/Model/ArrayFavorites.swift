@@ -12,9 +12,11 @@ import Foundation
 
 struct Favorites: Identifiable {
     var id: UUID = UUID()
-    var favoriteAthlete: String? // reprise des énumérations
-    var favoriteCountry: String? // reprise des énumérations des 208 pays ?
-    var favoriteSport: String? // reprise des énumérations des 54 sports ?
+   
+    
+    
+
+
 }
 
 /* ---------  QUESTIONS  ---------

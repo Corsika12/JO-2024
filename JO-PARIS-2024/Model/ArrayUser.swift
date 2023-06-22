@@ -16,7 +16,18 @@ struct User: Identifiable {
 
     var userEmail : String?
     var userPassword: String?
+    
+    var favoriteAthlete: [Athlete] = [] // reprise des énumérations
+    var favoriteCountry: [Country] = []  // reprise des énumérations des 190 pays ?
+    var favoriteSport: [Sport] = []  // reprise des énumérations des 46 sports
+    
 }
 
 
+// var favoriteSports : [Sport] = []
 
+/* --------  To Do  --------
+ 
+ Gestion des favoris
+ 
+ */

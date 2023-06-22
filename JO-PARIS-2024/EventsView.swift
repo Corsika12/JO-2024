@@ -8,6 +8,7 @@
 import SwiftUI
 
 // --------  Ecran des évènements avec calendrier (Date Picker)  --------
+// by Séraphin
 
 struct EventsView: View {
     var body: some View {
