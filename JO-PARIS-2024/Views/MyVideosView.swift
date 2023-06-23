@@ -8,13 +8,15 @@
 import SwiftUI
 
 // --------  Ecran des vidéos favorites  --------
-// by 
+// by ?
 
 struct MyVideosView: View {
+
     var body: some View {
         Text("Mes vidéos favorites")
     }
 }
+
 
 struct MyVideosView_Previews: PreviewProvider {
     static var previews: some View {

@@ -51,7 +51,7 @@ let golf = Sport(sport: "Golf", iconSport: "figure.golf")
 //Haltérophilie
 let handball = Sport(sport: "Handball", iconSport: "figure.handball")
 //Hockey
-//Judo
+let judo = Sport(sport: "Judo", iconSport: "")
 //Lutte
 //Natation
 //Natation artistique
@@ -80,7 +80,7 @@ let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery")
 //Waterpolo
 
 
-let sports : [Sport] = [athetisme, climbing, boxing, archery, escrime, golf, handball]
+let sports : [Sport] = [athetisme, climbing, boxing, archery, escrime, golf, handball, judo]
 
 var favoriteSports : [Sport] = []
 

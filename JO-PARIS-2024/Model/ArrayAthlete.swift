@@ -10,21 +10,28 @@ import Foundation
 // Structure des athlètes
 
 struct Athlete: /*Identifiable,*/ Codable {
-    let nom: String
-    let pays: String
-    let discipline: String
-    let epreuve: String
-    let medaille: String
+    var nameAthlete: String
+    var photoAthlete: String?
+    let genre: String
+    var country: String
+    var sport: String
+    var paralypiqueAthete: Bool
+    var epreuve: String
+    var awards: String
+    
     
     
     /*
     var id: UUID = UUID()
-    var nameAthlete: String
-    var photoAthlete: String?
-    var paralypiqueAthete: Bool
+     
+     "nameAthlete": "Fred Kerley",
+     "genre": "Homme",
+     "country": "USA",
+     "discipline": "Athletisme",
+     "paralypiqueAthete": "False",
+     "epreuve": "100 m hommes",
+     "awards": ""
      */
-    
-    
     
 }
 

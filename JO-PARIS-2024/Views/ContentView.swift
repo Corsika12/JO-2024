@@ -12,6 +12,11 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
+    // ENVIRONMENT OBJECT
+    // @EnvironmentObject var apiData: ApiData
+    // @EnvironmentObject var userPrefs: UserPrefs
+    
     var body: some View {
         TabBarView()
     }
@@ -23,3 +28,12 @@ struct ContentView_Previews: PreviewProvider {
         
     }
 }
+
+
+
+
+/* --------  Tuto  --------
+ 
+ https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
+ 
+ */

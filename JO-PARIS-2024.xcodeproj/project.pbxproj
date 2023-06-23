@@ -13,6 +13,8 @@
 		0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B62A44A298003F7108 /* AthleteProfilView.swift */; };
 		0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B82A44A350003F7108 /* CountryProfilView.swift */; };
 		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
+		0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587BE2A45A95400E50EEF /* PickerView.swift */; };
+		0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587C02A45E7A300E50EEF /* Picker2View.swift */; };
 		0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */; };
 		0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881F2A433845001DF0B0 /* ContentView.swift */; };
 		0CDD88222A433846001DF0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDD88212A433846001DF0B0 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		0C4600B62A44A298003F7108 /* AthleteProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteProfilView.swift; sourceTree = "<group>"; };
 		0C4600B82A44A350003F7108 /* CountryProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProfilView.swift; sourceTree = "<group>"; };
 		0C7A10BD2A4473ED00B3298F /* athlete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = athlete.json; sourceTree = "<group>"; };
+		0CB587BE2A45A95400E50EEF /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		0CB587C02A45E7A300E50EEF /* Picker2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker2View.swift; sourceTree = "<group>"; };
 		0CDD881A2A433845001DF0B0 /* JO-PARIS-2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JO-PARIS-2024.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JO_PARIS_2024App.swift; sourceTree = "<group>"; };
 		0CDD881F2A433845001DF0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				0C4600B22A44A06D003F7108 /* AddView.swift */,
+				0CB587BE2A45A95400E50EEF /* PickerView.swift */,
+				0CB587C02A45E7A300E50EEF /* Picker2View.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -148,8 +154,8 @@
 				0CDD883D2A433D4E001DF0B0 /* ArrayUser.swift */,
 				0CDD88472A434424001DF0B0 /* ArrayCountry.swift */,
 				0CDD88452A4343DC001DF0B0 /* ArraySport.swift */,
-				0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */,
 				0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */,
+				0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */,
 				0C7A10BD2A4473ED00B3298F /* athlete.json */,
 			);
 			path = Model;
@@ -238,6 +244,8 @@
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
+				0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */,
+				0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */,
 				0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
@@ -381,6 +389,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,25 +1,44 @@
 [
     {
-        "nom": "Marcell Jacobs",
-        "pays": "ITA",
-        "discipline": "Athletisme",
+        "nameAthlete": "Marcell Jacobs",
+        "photoAthlete": "",
+        "genre": "Homme",
+        "country": "ITA",
+        "sport": "Athletisme",
+        "paralypiqueAthete": "False",
         "epreuve": "100 m hommes",
-        "medaille": ""
+        "awards": ""
     },
     {
-        "nom": "Fred Kerley",
-        "pays": "USA",
-        "discipline": "Athletisme",
+        "nameAthlete": "Fred Kerley",
+        "photoAthlete": "",
+        "genre": "Homme",
+        "country": "USA",
+        "sport": "Athletisme",
+        "paralypiqueAthete": "False",
         "epreuve": "100 m hommes",
-        "medaille": ""
+        "awards": ""
     },
     {
-        "nom": "Andre De Grasse",
-        "pays": "CAN",
-        "discipline": "Athletisme",
+        "nameAthlete": "Andre De Grasse",
+        "photoAthlete": "",
+        "genre": "Homme",
+        "country": "CAN",
+        "sport": "Athletisme",
+        "paralypiqueAthete": "False",
         "epreuve": "100 m hommes",
-        "medaille": ""
-    }
+        "awards": ""
+    },
+    {
+        "nameAthlete": "Teddy Riner",
+        "photoAthlete": "",
+        "genre": "Homme",
+        "country": "CAN",
+        "sport": "Athletisme",
+        "paralypiqueAthete": "False",
+        "epreuve": "100 m hommes",
+        "awards": ""
+    },
     
 ]
 

@@ -10,6 +10,13 @@ import SwiftUI
 @main
 
 struct JO_PARIS_2024App: App {
+    
+    
+    // ENVIRONMENT OBJECT
+    // @StateObject var apiData = ApiData()
+    // @StateObject var userPrefs = UserPrefs()
+     
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
