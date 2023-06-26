@@ -11,7 +11,8 @@ import Foundation
 
 struct Event: Identifiable {
     var id: UUID = UUID()
-    var sport: String // Discipline (ex : BMX freestyle)
+    var sport: Sport // Discipline (ex : BMX freestyle)
+    var epreuve: String
     
     var lieu: String // Site de l'évènement (ex : Site d’escalade du Bourget) ;
     
@@ -21,7 +22,19 @@ struct Event: Identifiable {
     var dateEvent: Date // Date de la compétition
     var hourEvent: Date?  // à voir si besoin d'une énumération ou un autre modèle de date ?
     // Voir pour les scores, podiums... ?
-    
-    
-    // Tuto à étudier : http://swift-tuto.fr/524/les-dates-en-swift/
 }
+
+var boxe0 = Event(sport: boxing, epreuve: "Qualifications Poids-lourd", lieu: "Paris", awards: "", paralympique: false, dateEvent: .now)
+var climbing0 = Event(sport: climbing, epreuve: "Finale Vitesse", lieu: "Marseille", awards: "", paralympique: false, dateEvent: .distantFuture)
+var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", awards: "", paralympique: true, dateEvent: .distantFuture)
+
+var events : [Event] = [boxe0, climbing0, handball0]
+
+
+
+
+/* --------  Tuto  --------
+
+// Tuto à étudier : http://swift-tuto.fr/524/les-dates-en-swift/
+
+*/

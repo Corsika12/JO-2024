@@ -28,9 +28,9 @@ struct PickerView: View {
                 
                 VStack {
                     Picker("Choix de la catégorie", selection: $selectFilter) {
-                        Text("Pays1").tag(0)
-                        Text("Sport1").tag(1)
-                        Text("Athelt1").tag(2)
+                        Text("Pays").tag(0)
+                        Text("Sport").tag(1)
+                        Text("Athèltes").tag(2)
                     }
                     .pickerStyle(.segmented)
                     .padding(4)

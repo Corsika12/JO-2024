@@ -15,6 +15,7 @@
 		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
 		0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587BE2A45A95400E50EEF /* PickerView.swift */; };
 		0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587C02A45E7A300E50EEF /* Picker2View.swift */; };
+		0CB9A51E2A4994B200C755FF /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9A51D2A4994B200C755FF /* EventViewModel.swift */; };
 		0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */; };
 		0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD881F2A433845001DF0B0 /* ContentView.swift */; };
 		0CDD88222A433846001DF0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDD88212A433846001DF0B0 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		0C7A10BD2A4473ED00B3298F /* athlete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = athlete.json; sourceTree = "<group>"; };
 		0CB587BE2A45A95400E50EEF /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0CB587C02A45E7A300E50EEF /* Picker2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker2View.swift; sourceTree = "<group>"; };
+		0CB9A51D2A4994B200C755FF /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		0CDD881A2A433845001DF0B0 /* JO-PARIS-2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JO-PARIS-2024.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDD881D2A433845001DF0B0 /* JO_PARIS_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JO_PARIS_2024App.swift; sourceTree = "<group>"; };
 		0CDD881F2A433845001DF0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CB9A51C2A49948A00C755FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0CB9A51D2A4994B200C755FF /* EventViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0CDD88112A433845001DF0B0 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4600AF2A4497F6003F7108 /* Info.plist */,
+				0CB9A51C2A49948A00C755FF /* ViewModel */,
 				0CDD882E2A4338AE001DF0B0 /* Model */,
 				0CDD882D2A43389B001DF0B0 /* Extension */,
 				0CDD882C2A433875001DF0B0 /* Buttons */,
@@ -252,6 +263,7 @@
 				0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */,
 				0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */,
 				0CDD881E2A433845001DF0B0 /* JO_PARIS_2024App.swift in Sources */,
+				0CB9A51E2A4994B200C755FF /* EventViewModel.swift in Sources */,
 				0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
