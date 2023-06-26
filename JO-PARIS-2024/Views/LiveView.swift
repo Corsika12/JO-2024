@@ -6,13 +6,35 @@
 //
 
 import SwiftUI
-
-// --------  Ecran des vidéos en live + temps forts  --------
-// by Hamza
+import AVKit
 
 struct LiveView: View {
+    @State private var player: AVPlayer?
+    var videoURL: String = "https://www.dailymotion.com/embed/video/x8jux46"
+
     var body: some View {
-        Text("Live")
+        VideoPlayer(player: player, videoOverlay: {
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Text("Video en live")
+                        .foregroundColor(.white)
+                        .padding(10)
+                }
+            }
+        })
+        .onAppear {
+            guard let url = URL(string: videoURL) else {
+                return
+            }
+            player = AVPlayer(url: url)
+            player?.play()
+        }
+        .onDisappear {
+            player?.pause()
+        }
+        .frame(height: 400)
     }
 }
 
@@ -21,3 +43,10 @@ struct LiveView_Previews: PreviewProvider {
         LiveView()
     }
 }
+
+
+/* --------  Tuto  --------
+
+A étudier : https://mia-e.medium.com/how-to-add-a-video-player-in-your-swiftui-app-using-avkit-beginner-tutorial-ffce69af486
+
+*/

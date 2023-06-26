@@ -13,7 +13,12 @@ import SwiftUI
 struct MyVideosView: View {
 
     var body: some View {
-        Text("Mes vidéos favorites")
+        VStack {
+            Text("Mes vidéos favorites")
+            
+
+            
+        } // Fin de la VStack
     }
 }
 

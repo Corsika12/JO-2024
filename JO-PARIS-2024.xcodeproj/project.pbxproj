@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C259F402A49DF9F00AB16DD /* ButtonNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C259F3F2A49DF9F00AB16DD /* ButtonNewsView.swift */; };
+		0C259F422A49E29100AB16DD /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C259F412A49E29100AB16DD /* NewsDetailView.swift */; };
 		0C4600B12A4499FC003F7108 /* Paris2024-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */; };
 		0C4600B32A44A06D003F7108 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B22A44A06D003F7108 /* AddView.swift */; };
 		0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B42A44A1D1003F7108 /* SportProfilView.swift */; };
 		0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B62A44A298003F7108 /* AthleteProfilView.swift */; };
 		0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B82A44A350003F7108 /* CountryProfilView.swift */; };
 		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
+		0CA060BC2A4A0E8C004C9D8D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C259F502A49FD4800AB16DD /* AVKit.framework */; };
 		0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587BE2A45A95400E50EEF /* PickerView.swift */; };
 		0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587C02A45E7A300E50EEF /* Picker2View.swift */; };
 		0CB9A51E2A4994B200C755FF /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9A51D2A4994B200C755FF /* EventViewModel.swift */; };
@@ -35,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C259F3F2A49DF9F00AB16DD /* ButtonNewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNewsView.swift; sourceTree = "<group>"; };
+		0C259F412A49E29100AB16DD /* NewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
+		0C259F502A49FD4800AB16DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		0C259F592A4A05DC00AB16DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0C4600AF2A4497F6003F7108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Paris2024-Variable.ttf"; sourceTree = "<group>"; };
 		0C4600B22A44A06D003F7108 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -69,12 +76,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA060BC2A4A0E8C004C9D8D /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C259F4F2A49FD4800AB16DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C259F592A4A05DC00AB16DD /* AVFoundation.framework */,
+				0C259F502A49FD4800AB16DD /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0CB9A51C2A49948A00C755FF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +105,7 @@
 			children = (
 				0CDD881C2A433845001DF0B0 /* JO-PARIS-2024 */,
 				0CDD881B2A433845001DF0B0 /* Products */,
+				0C259F4F2A49FD4800AB16DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +150,7 @@
 				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
 				0CDD883B2A433CBB001DF0B0 /* SettingsModaleView.swift */,
 				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
+				0C259F412A49E29100AB16DD /* NewsDetailView.swift */,
 				0CDD88352A433BED001DF0B0 /* LiveView.swift */,
 				0CDD88332A433BD1001DF0B0 /* EventsView.swift */,
 				0CDD88312A433BC2001DF0B0 /* ProfilView.swift */,
@@ -145,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4600B22A44A06D003F7108 /* AddView.swift */,
+				0C259F3F2A49DF9F00AB16DD /* ButtonNewsView.swift */,
 				0CB587BE2A45A95400E50EEF /* PickerView.swift */,
 				0CB587C02A45E7A300E50EEF /* Picker2View.swift */,
 			);
@@ -246,6 +266,7 @@
 			files = (
 				0CDD883A2A433C55001DF0B0 /* MyVideosView.swift in Sources */,
 				0CDD88362A433BED001DF0B0 /* LiveView.swift in Sources */,
+				0C259F422A49E29100AB16DD /* NewsDetailView.swift in Sources */,
 				0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */,
 				0C4600B32A44A06D003F7108 /* AddView.swift in Sources */,
 				0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */,
@@ -253,6 +274,7 @@
 				0CDD883C2A433CBB001DF0B0 /* SettingsModaleView.swift in Sources */,
 				0CDD883E2A433D4E001DF0B0 /* ArrayUser.swift in Sources */,
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
+				0C259F402A49DF9F00AB16DD /* ButtonNewsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
 				0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */,
@@ -393,6 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JO-PARIS-2024/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "JO-PARIS-2024/Info.plist";
@@ -401,7 +424,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +432,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.EmmanuelCarrie.JO-PARIS-2024";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JO-PARIS-2024/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "JO-PARIS-2024/Info.plist";
@@ -431,7 +458,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,6 +466,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.EmmanuelCarrie.JO-PARIS-2024";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
