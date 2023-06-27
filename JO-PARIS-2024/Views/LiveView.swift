@@ -10,7 +10,7 @@ import AVKit
 
 struct LiveView: View {
     @State private var player: AVPlayer?
-    var videoURL: String = "https://www.dailymotion.com/embed/video/x8jux46"
+    var videoURL: String = "https://www.youtube.com/embed/PbYny-d9lrw"
 
     var body: some View {
         VideoPlayer(player: player, videoOverlay: {

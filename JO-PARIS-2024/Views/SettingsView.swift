@@ -1,18 +1,18 @@
 //
-//  SettingsModaleView.swift
+//  SettingsView.swift
 //  JO-PARIS-2024
 //
-//  Created by M on 21/06/2023.
+//  Created by M on 27/06/2023.
 //
 
 import SwiftUI
 
-
-// --------  MODALE AVEC LES PARAMETRES  --------
-// by 
-
-struct SettingsModaleView: View {
+struct SettingsView: View {
+    
+    @Binding var isModaleShown : Bool
+    
     var body: some View {
+        
         LazyVStack{
             Section{
                 Text("Paramétrages")
@@ -34,16 +34,22 @@ struct SettingsModaleView: View {
                 Text("Contrat de licence utilisateur final")
                     .font(.title3)
                 Text("Retrouvez toutes ces informations sur notre site www.olympixo.com")
-                
             }
             .padding()
-            
+        }
+        
+        Button {
+            isModaleShown = false
+        } label: {
+            Image(systemName: "xmark")
+                .font(.largeTitle)
+                .foregroundColor(.white)
         }
     }
 }
 
-struct SettingsModaleView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsModaleView()
+        SettingsView(isModaleShown: .constant(true))
     }
 }

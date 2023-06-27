@@ -12,92 +12,110 @@ import SwiftUI
 // by Clara
 
 struct ProfilView: View {
+    
+    @AppStorage("addingStuff") var addingStuff : Int = 0
+    @State var isShown : Bool = false
+    @EnvironmentObject var countryVM: CountryViewModel
+    @EnvironmentObject var userVM: UserViewModel
+    
     var body: some View {
-        ScrollView {
-            VStack{
-                HStack{
-                    Image("userImage") // image du profil
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 80, height: 80)
+        NavigationView() {
+            ScrollView {
+                VStack{
                     
-                    VStack(alignment:.leading){
-                        Text("Miles")// prénom et nom de l'utilisateur
-                            .font(.title2)
-                            .bold()
-                        Text("Morales")
-                            .foregroundColor(.gray)
-                    }
-                    .padding(70)
+                    HStack{
+                        Image(userVM.users[0].userImage) // image du profil
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 80, height: 80)
+                        
+                        VStack(alignment:.leading){
+                            Text(userVM.users[0].userFirstName)// prénom et nom de l'utilisateur
+                                .font(.title2)
+                                .bold()
+                            Text(userVM.users[0].userLastName)
+                                .foregroundColor(.gray)
+                        }
+                        .padding(70)
+                        
+                        Button {
+                            isShown.toggle()
+                        } label: {
+                            Image(systemName:"gearshape")
+                        }
+                        .tint(.black)// bouton réglages
+                        .sheet(isPresented: $isShown) {
+                            SettingsView(isModaleShown: $isShown)
+                        }
+                    } // fin de l'entête du profil
                     
-                    Button {
-                        //
-                    } label: {
-                        Image(systemName:"gearshape")
-                    }
-                    .tint(.black)// bouton réglages
-                                            
-                } // fin de l'entête du profil
-                
-                
-                
-                
-                
-
+                    
                     Text("Pays")//titre cathégorie
                         .font(.title3)
                         .bold()
-                ScrollView(.horizontal) {
-                    HStack{
-                            CountryProfilView(flagCountry: italy.flagCountry, country: italy.country)//premier pays
+                    ScrollView(.horizontal) {
+                        HStack{
                             
-                            CountryProfilView(flagCountry: brazil.flagCountry, country: brazil.country)// deuxième pays
+                            ForEach (userVM.users[0].favoriteCountry) {
+                                country in
+                                CountryProfilView(flagCountry: country.flagCountry, country: country.country)
+                            }// pays
                             
-                            Button {
-                                //
+                            NavigationLink {
+                                AddCountryView()
                             } label: {
-                                AddView()// ajout athlète
+                                AddView()
                             }
                             
-                    }//fin HStack pays
-                }
+                        }
+                        
+                    }//fin scrollView pays
                     
-
-                
-
                     Text("Sports")//titre cathégorie
                         .font(.title3)
                         .bold()
-                ScrollView(.horizontal) {
-                    HStack{
-                            SportProfilView(image: tennis.iconSport, nameSport: tennis.sport)//premier sport
+                    ScrollView(.horizontal) {
+                        HStack{
                             
-                            Button {
-                                //
-                            } label: {
-                                AddView()// ajout athlète
+                            ForEach(userVM.users[0].favoriteSport){
+                                sport in
+                                SportProfilView(image: sport.iconSport, nameSport: sport.sport)
                             }
-                    }//fin HStack sport
-                }
+                            //premier sport
+                            
+                            NavigationLink {
+                                AddSportView()
+                            } label: {
+                                AddView()
+                            }
+                        }
+                    }//fin ScrollView sport
                     
-
+                    
                     Text("Athlètes")//titre cathégorie
                         .font(.title3)
                         .bold()
-                ScrollView(.horizontal) {
-                    HStack{
-                            AthleteProfilView(image: "LorenzoMusetti", nameAthlete: "Lorenzo Musetti")
-                            
-                            Button {
-                                //
-                            } label: {
-                                AddView()// ajout athlète
+                    ScrollView(.horizontal) {
+                        HStack{
+                            ForEach(userVM.users[0].favoriteAthlete){
+                                athlete in
+                                AthleteProfilView(image:athlete.photoAthlete, nameAthlete: athlete.nameAthlete )
                             }
-                    }//fin HStack athlete
+                            
+                            NavigationLink {
+                                AddAthleteView()
+                            } label: {
+                                AddView()
+                            }
+                        }
+                    }//fin ScrollView athlete
                 }
-                
             }
+        }
+        .onChange(of: addingStuff) { newValue in
+            userVM.objectWillChange.send()
+            
         }
     }
 }
@@ -105,5 +123,10 @@ struct ProfilView: View {
 struct ProfilView_Previews: PreviewProvider {
     static var previews: some View {
         ProfilView()
+            .environmentObject(UserViewModel())
+            .environmentObject(CountryViewModel())
+            .environmentObject(AthleteViewModel())
+            .environmentObject(SportViewModel())
     }
 }
+

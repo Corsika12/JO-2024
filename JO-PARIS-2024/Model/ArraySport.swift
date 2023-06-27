@@ -15,9 +15,6 @@ struct Sport: Identifiable {
     var iconSport: String // Logo du sport
 }
 
-
-
-
 let athetisme = Sport(sport: "Athlétisme", iconSport: "")
 
 /*
@@ -64,8 +61,6 @@ let judo = Sport(sport: "Judo", iconSport: "")
 //Surf
 //Taekwondo
 
-
-
 let tennis = Sport(sport: "Tennis", iconSport: "tennis.racket")
 //Tennis de table
 //Tir
@@ -78,11 +73,6 @@ let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery")
 //Volleyball de plage
 //VTT
 //Waterpolo
-
-
-let sports : [Sport] = [athetisme, climbing, boxing, archery, escrime, golf, handball, judo]
-
-var favoriteSports : [Sport] = []
 
 
 

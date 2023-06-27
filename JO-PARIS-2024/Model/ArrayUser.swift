@@ -9,17 +9,30 @@ import Foundation
 
 // Structure des utilisateurs, avec les mots de passe
 
-struct User: Identifiable {
-    var id: UUID = UUID()
-    var userName: String?
-    var userImage: String?
-
-    var userEmail : String?
-    var userPassword: String?
+class User: Identifiable, ObservableObject {
+    internal init(id: UUID = UUID(), userFirstName: String, userLastName: String, userImage: String, userEmail: String, userPassword: String, favoriteAthlete: [Athlete] = [], favoriteCountry: [Country] = [], favoriteSport: [Sport] = []) {
+        self.id = id
+        self.userFirstName = userFirstName
+        self.userLastName = userLastName
+        self.userImage = userImage
+        self.userEmail = userEmail
+        self.userPassword = userPassword
+        self.favoriteAthlete = favoriteAthlete
+        self.favoriteCountry = favoriteCountry
+        self.favoriteSport = favoriteSport
+    }
     
-    var favoriteAthlete: [Athlete] = [] // reprise des énumérations
-    var favoriteCountry: [Country] = []  // reprise des énumérations des 190 pays ?
-    var favoriteSport: [Sport] = []  // reprise des énumérations des 46 sports
+    var id: UUID = UUID()
+    var userFirstName: String
+    var userLastName: String
+    var userImage: String
+    
+    var userEmail : String
+    var userPassword: String
+    
+    @Published var favoriteAthlete: [Athlete] = [] // reprise des énumérations
+    @Published var favoriteCountry: [Country] = []  // reprise des énumérations des 190 pays ?
+    @Published var favoriteSport: [Sport] = []  // reprise des énumérations des 46 sports
     
 }
 

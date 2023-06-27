@@ -5,21 +5,31 @@
 //  Created by M on 21/06/2023.
 //
 
+
+
+
 import SwiftUI
 
 @main
 
 struct JO_PARIS_2024App: App {
     
-    
     // ENVIRONMENT OBJECT
     // @StateObject var apiData = ApiData()
     // @StateObject var userPrefs = UserPrefs()
-     
     
+    @StateObject var userVM: UserViewModel = UserViewModel()// création de la boîte globale du user et ses préferences
+    @StateObject var countryVM: CountryViewModel = CountryViewModel()
+    @StateObject var sportVM: SportViewModel = SportViewModel()
+    @StateObject var athleteVM: AthleteViewModel = AthleteViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userVM)
+                .environmentObject(countryVM)
+                .environmentObject(sportVM)
+                .environmentObject(athleteVM)
+
         }
     }
 }

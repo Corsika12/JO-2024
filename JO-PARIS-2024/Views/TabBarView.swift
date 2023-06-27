@@ -26,7 +26,7 @@ struct TabBarView: View {
                     Label("Live", systemImage: "play.square.stack")
                         .environment(\.symbolVariants, .none)
                 }
-            EventsView()
+            EventsView(sport: true, date: false)
                 .tabItem{
                     Label("Evènements", systemImage: "calendar.badge.clock")
                         .environment(\.symbolVariants, .none)

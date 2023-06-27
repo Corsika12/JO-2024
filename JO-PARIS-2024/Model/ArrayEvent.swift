@@ -24,6 +24,7 @@ struct Event: Identifiable {
     // Voir pour les scores, podiums... ?
 }
 
+
 var boxe0 = Event(sport: boxing, epreuve: "Qualifications Poids-lourd", lieu: "Paris", awards: "", paralympique: false, dateEvent: .now)
 var climbing0 = Event(sport: climbing, epreuve: "Finale Vitesse", lieu: "Marseille", awards: "", paralympique: false, dateEvent: .distantFuture)
 var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", awards: "", paralympique: true, dateEvent: .distantFuture)

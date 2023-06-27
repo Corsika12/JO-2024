@@ -9,20 +9,19 @@ import Foundation
 
 // Structure des athlètes
 
-struct Athlete: /*Identifiable,*/ Codable {
+struct Athlete: Identifiable, Codable {
+    var id: UUID = UUID()
     var nameAthlete: String
-    var photoAthlete: String?
-    let genre: String
+    var photoAthlete: String
+    var genre: String
     var country: String
     var sport: String
     var paralypiqueAthete: Bool
     var epreuve: String
     var awards: String
     
-    
-    
     /*
-    var id: UUID = UUID()
+    
      
      "nameAthlete": "Fred Kerley",
      "genre": "Homme",
@@ -35,7 +34,7 @@ struct Athlete: /*Identifiable,*/ Codable {
     
 }
 
-
+let lorenzoMusetti = ( Athlete(nameAthlete: "Lorenzo Musetti", photoAthlete: "LorenzoMusetti", genre: "Homme", country: "Italie", sport: "Tennis", paralypiqueAthete: false, epreuve: "", awards: ""))
 
 
 

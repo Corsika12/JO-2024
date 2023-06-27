@@ -12,45 +12,54 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @StateObject var vm : EventVM = EventVM(sport: false, date: false)
+    @EnvironmentObject var sportVM: SportViewModel
+    
+    @State var sport: Bool
+    @State var date: Bool
     
     var body: some View {
         VStack {
             HStack{
                 Text("Évenements")
-                    .font(.custom("Paris2024-Variable", size: 24))
+                    .font(.custom("Paris2024", size: 24))
                     .foregroundColor(Color("RougeAmour"))
                     .padding()
-                
+                    
                 Spacer()
             }
             
-            ButtonEvent(txt: "Dates", isPresented: $vm.date)
+            ButtonEvent(txt: "Dates", isPresented: $date)
             
-            ButtonEvent(txt: "Sport", isPresented: $vm.sport)
+            ButtonEvent(txt: "Sport", isPresented: $sport)
             
-            //            vm.showFiltre()
-            if vm.sport {
+            if sport {
                 SportListView()
-            } else {
-                EventListView()
             }
+            
             Spacer()
         }
+        
+        
     }
 }
+
+
 
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView()
+        EventsView(sport: true, date: false)
+            .environmentObject(SportViewModel())
     }
 }
 
 struct SportListView: View {
+    
+    @EnvironmentObject var sportVM: SportViewModel
+    
     var body: some View {
         List{
-            ForEach(sports) { sport in
+            ForEach(sportVM.sports) { sport in
                 HStack {
                     Image(systemName: sport.iconSport)
                     Text(sport.sport)
@@ -74,26 +83,5 @@ struct ButtonEvent : View {
             Text(txt)
         })
         .buttonStyle(.borderedProminent)
-    }
-}
-
-struct EventListView : View {
-    
-    var body: some View{
-        List {
-            ForEach (events){ event in
-                HStack {
-                    Image(systemName: event.sport.iconSport)
-                    
-                    VStack {
-                        Text(event.sport.sport)
-                        Text(event.epreuve)
-                            .foregroundColor(.gray)
-                    }
-                    //                    afficher la date ici
-                    Text(event.dateEvent.formatted())
-                }
-            }
-        }.scrollContentBackground(.hidden)
     }
 }

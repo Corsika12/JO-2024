@@ -7,14 +7,12 @@
 
 import Foundation
 
-
 struct Country: Identifiable {
     var id: UUID = UUID()
     var country: String // Enumérations des pays
     var continent: String // Les 5 continents
     var codeCountry: String // Abréviation du pays (ex : Fr)
     var flagCountry: String // Drapeaux à ajouter dans les Assets
-
 }
 
 let italy = Country(country: "Italie",continent: "Europe", codeCountry: "IT", flagCountry: "italy")
@@ -23,7 +21,6 @@ let japan = Country(country: "Japon", continent: "Asie", codeCountry: "JP", flag
 let brazil = Country(country: "Brésil",continent: "Amérique du Sud", codeCountry: "BR", flagCountry: "brazil")
 let newZeland = Country(country: "Nouvelle-Zélande", continent: "Océanie", codeCountry: "NZ", flagCountry: "new zeland")
 
-let countries : [Country] = [italy, southAfrica, japan, brazil, newZeland]
 
 /* --------  To Do  --------
  
