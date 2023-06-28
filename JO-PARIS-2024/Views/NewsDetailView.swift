@@ -9,7 +9,12 @@ import SwiftUI
 
 struct NewsDetailView: View {
     var body: some View {
-        Text("En cours de réalisation")
+        VStack {
+            Text("En cours de réalisation")
+            
+            // tests par Manu, à supprimer
+            Image("Eliud_KIPCHOGE")
+        }
     }
 }
 

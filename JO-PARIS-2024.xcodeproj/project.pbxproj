@@ -17,6 +17,7 @@
 		0C2546142A4B0FB200146639 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546132A4B0FB200146639 /* SettingsView.swift */; };
 		0C2546162A4B10AA00146639 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546152A4B10AA00146639 /* UserViewModel.swift */; };
 		0C2546182A4B12DE00146639 /* AddAthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546172A4B12DE00146639 /* AddAthleteView.swift */; };
+		0C2BEC742A4C5FF00001A47D /* StreamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BEC732A4C5FF00001A47D /* StreamingView.swift */; };
 		0C4600B12A4499FC003F7108 /* Paris2024-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */; };
 		0C4600B32A44A06D003F7108 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B22A44A06D003F7108 /* AddView.swift */; };
 		0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B42A44A1D1003F7108 /* SportProfilView.swift */; };
@@ -56,6 +57,7 @@
 		0C2546172A4B12DE00146639 /* AddAthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAthleteView.swift; sourceTree = "<group>"; };
 		0C259F502A49FD4800AB16DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		0C259F592A4A05DC00AB16DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0C2BEC732A4C5FF00001A47D /* StreamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingView.swift; sourceTree = "<group>"; };
 		0C4600AF2A4497F6003F7108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0C4600B02A4499FC003F7108 /* Paris2024-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Paris2024-Variable.ttf"; sourceTree = "<group>"; };
 		0C4600B22A44A06D003F7108 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				0C4600B42A44A1D1003F7108 /* SportProfilView.swift */,
 				0C15FC102A4C16DB003E8A33 /* NewsDetailView.swift */,
 				0C25460B2A4B0BF500146639 /* AddSportView.swift */,
+				0C2BEC732A4C5FF00001A47D /* StreamingView.swift */,
 				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
 				0C2546132A4B0FB200146639 /* SettingsView.swift */,
 				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
@@ -295,6 +298,7 @@
 				0C2546102A4B0D0700146639 /* SportViewModel.swift in Sources */,
 				0CDD88402A433DE1001DF0B0 /* ArrayEvent.swift in Sources */,
 				0CDD88202A433845001DF0B0 /* ContentView.swift in Sources */,
+				0C2BEC742A4C5FF00001A47D /* StreamingView.swift in Sources */,
 				0CDD883E2A433D4E001DF0B0 /* ArrayUser.swift in Sources */,
 				0CDD88342A433BD1001DF0B0 /* EventsView.swift in Sources */,
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,

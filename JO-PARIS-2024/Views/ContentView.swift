@@ -13,23 +13,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // ENVIRONMENT OBJECT
-    // @EnvironmentObject var apiData: ApiData
-    // @EnvironmentObject var userPrefs: UserPrefs
-    
+
     var body: some View {
         TabBarView()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+
+struct ContentView_Previews:  PreviewProvider {
+    
     static var previews: some View {
         ContentView()
-        
+            .environmentObject(UserViewModel())
+            .environmentObject(CountryViewModel())
+            .environmentObject(SportViewModel())
+            .environmentObject(AthleteViewModel())
     }
 }
-
-
 
 
 /* --------  Tuto  --------
