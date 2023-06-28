@@ -10,14 +10,19 @@ import SwiftUI
 struct SettingsView: View {
     
     @Binding var isModaleShown : Bool
+    @State private var notificationsToggle = false
+    @State private var geolocationToggle = false
     
     var body: some View {
         
         LazyVStack{
             Section{
+                Spacer()
+                    .padding()
                 Text("Paramétrages")
                     .font(.title)
-                Text("Ajouter un toggle pour le choix utilisateur sur les notifications ? La géolocalisation ? ... ")
+                Toggle("Activer les notifications", isOn: $notificationsToggle)
+                Toggle("Activer la géolocalisation", isOn: $geolocationToggle)
             }
             .padding()
             Divider()
@@ -37,6 +42,7 @@ struct SettingsView: View {
             }
             .padding()
         }
+        .padding(.bottom, 40.0)
         
         Button {
             isModaleShown = false

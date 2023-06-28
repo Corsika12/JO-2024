@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C2546062A4B082A00146639 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546052A4B082A00146639 /* NewsDetailView.swift */; };
-		0C2546082A4B086D00146639 /* ButtonNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546072A4B086D00146639 /* ButtonNewsView.swift */; };
+		0C15FC0F2A4C1695003E8A33 /* ButtonNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15FC0E2A4C1695003E8A33 /* ButtonNewsView.swift */; };
+		0C15FC112A4C16DB003E8A33 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15FC102A4C16DB003E8A33 /* NewsDetailView.swift */; };
 		0C25460A2A4B0BA900146639 /* AddCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2546092A4B0BA900146639 /* AddCountryView.swift */; };
 		0C25460C2A4B0BF500146639 /* AddSportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C25460B2A4B0BF500146639 /* AddSportView.swift */; };
 		0C25460E2A4B0CCD00146639 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C25460D2A4B0CCD00146639 /* CountryViewModel.swift */; };
@@ -44,8 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C2546052A4B082A00146639 /* NewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsDetailView.swift; path = ../../../../../../Volumes/BackUp/NewsDetailView.swift; sourceTree = "<group>"; };
-		0C2546072A4B086D00146639 /* ButtonNewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNewsView.swift; path = ../../../../../../Volumes/BackUp/ButtonNewsView.swift; sourceTree = "<group>"; };
+		0C15FC0E2A4C1695003E8A33 /* ButtonNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNewsView.swift; sourceTree = "<group>"; };
+		0C15FC102A4C16DB003E8A33 /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		0C2546092A4B0BA900146639 /* AddCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryView.swift; sourceTree = "<group>"; };
 		0C25460B2A4B0BF500146639 /* AddSportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSportView.swift; sourceTree = "<group>"; };
 		0C25460D2A4B0CCD00146639 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
@@ -167,11 +167,11 @@
 				0C2546092A4B0BA900146639 /* AddCountryView.swift */,
 				0C4600B82A44A350003F7108 /* CountryProfilView.swift */,
 				0C4600B42A44A1D1003F7108 /* SportProfilView.swift */,
+				0C15FC102A4C16DB003E8A33 /* NewsDetailView.swift */,
 				0C25460B2A4B0BF500146639 /* AddSportView.swift */,
 				0CDD88392A433C55001DF0B0 /* MyVideosView.swift */,
 				0C2546132A4B0FB200146639 /* SettingsView.swift */,
 				0CDD88372A433C2A001DF0B0 /* NewsView.swift */,
-				0C2546052A4B082A00146639 /* NewsDetailView.swift */,
 				0CDD88352A433BED001DF0B0 /* LiveView.swift */,
 				0CDD88332A433BD1001DF0B0 /* EventsView.swift */,
 				0CDD88312A433BC2001DF0B0 /* ProfilView.swift */,
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4600B22A44A06D003F7108 /* AddView.swift */,
-				0C2546072A4B086D00146639 /* ButtonNewsView.swift */,
+				0C15FC0E2A4C1695003E8A33 /* ButtonNewsView.swift */,
 				0CB587BE2A45A95400E50EEF /* PickerView.swift */,
 				0CB587C02A45E7A300E50EEF /* Picker2View.swift */,
 			);
@@ -288,8 +288,8 @@
 				0CDD883A2A433C55001DF0B0 /* MyVideosView.swift in Sources */,
 				0C2546162A4B10AA00146639 /* UserViewModel.swift in Sources */,
 				0CDD88362A433BED001DF0B0 /* LiveView.swift in Sources */,
-				0C2546062A4B082A00146639 /* NewsDetailView.swift in Sources */,
 				0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */,
+				0C15FC112A4C16DB003E8A33 /* NewsDetailView.swift in Sources */,
 				0C4600B32A44A06D003F7108 /* AddView.swift in Sources */,
 				0C25460E2A4B0CCD00146639 /* CountryViewModel.swift in Sources */,
 				0C2546102A4B0D0700146639 /* SportViewModel.swift in Sources */,
@@ -300,13 +300,13 @@
 				0CDD88382A433C2A001DF0B0 /* NewsView.swift in Sources */,
 				0CDD88302A433B9C001DF0B0 /* TabBarView.swift in Sources */,
 				0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */,
-				0C2546082A4B086D00146639 /* ButtonNewsView.swift in Sources */,
 				0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */,
 				0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */,
 				0C2546142A4B0FB200146639 /* SettingsView.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0C25460C2A4B0BF500146639 /* AddSportView.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
+				0C15FC0F2A4C1695003E8A33 /* ButtonNewsView.swift in Sources */,
 				0C2546182A4B12DE00146639 /* AddAthleteView.swift in Sources */,
 				0CDD88482A434424001DF0B0 /* ArrayCountry.swift in Sources */,
 				0CDD88462A4343DC001DF0B0 /* ArraySport.swift in Sources */,
