@@ -25,14 +25,21 @@ struct VideoStreamingView: UIViewRepresentable {
 
     func makeUIView(context: Context) ->  WKWebView {
         let webview = WKWebView()
-//        if URL youtube
-        guard let videoURL = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return webview }
-//        else
-//        guard let videoURL = URL(string: "https://www.dailymotion.com/embed/video/\(videoId)") else { return webview }
         
-        let request = URLRequest(url: videoURL, cachePolicy: .returnCacheDataElseLoad)
-        webview.load(request)
-        webview.scrollView.isScrollEnabled = false
+        // URL Youtube
+        if videoId.count <= 12 {
+            guard let videoURL = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return webview }
+            let request = URLRequest(url: videoURL, cachePolicy: .returnCacheDataElseLoad)
+            webview.load(request)
+            webview.scrollView.isScrollEnabled = false
+            
+//           Autres URL
+        } else {
+            guard let videoURL = URL(string: "https://\(videoId)") else { return webview }
+            let request = URLRequest(url: videoURL, cachePolicy: .returnCacheDataElseLoad)
+            webview.load(request)
+            webview.scrollView.isScrollEnabled = false
+        }
         return webview
     }
     
@@ -40,12 +47,9 @@ struct VideoStreamingView: UIViewRepresentable {
 }
 
 struct CollectionView: View {
-//    Youtube
-    let ids = ["qGAf6xsFFSs", "SINpbLxXNgw", "PbYny-d9lrw", "mYMuWTKHZus"]
-    
-//    Dailymotion ids
-//    let ids = ["x8ew4nz"]
 
+    // Uniquement l'Id pour Youtube ; URL longue pour les autres plateformes de streaming
+    let ids = ["qGAf6xsFFSs", "SINpbLxXNgw", "PbYny-d9lrw", "mYMuWTKHZus", "www.dailymotion.com/embed/video/x8ew4nz"]
     
     var body: some View {
         ScrollView(showsIndicators: false) {
