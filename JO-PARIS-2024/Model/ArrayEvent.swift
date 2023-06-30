@@ -24,18 +24,43 @@ struct Event: Identifiable {
     // Voir pour les scores, podiums... ?
 }
 
+var userLocale = Locale.autoupdatingCurrent
+var userCalendar = Calendar.autoupdatingCurrent
 
-var boxe0 = Event(sport: boxing, epreuve: "Qualifications Poids-lourd", lieu: "Paris", awards: "", paralympique: false, dateEvent: .now)
-var climbing0 = Event(sport: climbing, epreuve: "Finale Vitesse", lieu: "Marseille", awards: "", paralympique: false, dateEvent: .distantFuture)
-var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", awards: "", paralympique: true, dateEvent: .distantFuture)
+var climbing0Components = DateComponents(
+    year: 2024,
+    month: 7,
+    day: 30,
+    hour: 16,
+    minute: 15
+)
+
+var handball0Components = DateComponents(
+    year: 2024,
+    month: 8,
+    day: 6,
+    hour: 20,
+    minute: 00
+)
+
+var openingCeremonyComponents = DateComponents (
+    year: 2024,
+    month: 7,
+    day: 26,
+    hour: 20,
+    minute: 00
+)
+
+var boxe0 = Event(sport: boxing, epreuve: "Qualifications Poids-lourd", lieu: "Paris", awards: "", paralympique: false, dateEvent: userCalendar.date(from: DateComponents(year: 2024, month: 7, day: 28, hour: 10, minute: 30))!)
+var climbing0 = Event(sport: climbing, epreuve: "Finale Vitesse", lieu: "Marseille", awards: "", paralympique: false, dateEvent: userCalendar.date(from: climbing0Components)!)
+var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", awards: "", paralympique: true, dateEvent: userCalendar.date(from: handball0Components)!)
 
 var events : [Event] = [boxe0, climbing0, handball0]
 
 
 
-
 /* --------  Tuto  --------
-
-// Tuto à étudier : http://swift-tuto.fr/524/les-dates-en-swift/
-
-*/
+ 
+ // Tuto à étudier : http://swift-tuto.fr/524/les-dates-en-swift/
+ 
+ */

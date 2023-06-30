@@ -12,10 +12,7 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @EnvironmentObject var sportVM: SportViewModel
-    
-    @State var sport: Bool
-    @State var date: Bool
+    @StateObject var vm : EventVM = EventVM(sport: false, date: false)
     
     var body: some View {
         VStack {
@@ -28,18 +25,20 @@ struct EventsView: View {
                 Spacer()
             }
             
-            ButtonEvent(txt: "Dates", isPresented: $date)
+            ButtonEvent(txt: "Dates", isPresented: $vm.date)
             
-            ButtonEvent(txt: "Sport", isPresented: $sport)
+            ButtonEvent(txt: "Sport", isPresented: $vm.sport)
             
-            if sport {
-                SportListView()
-            }
+            if vm.sport {
+                           SportListView()
+                       } else {
+                           EventListView()
+                       }
             
             Spacer()
+            
+            MapSportsView()
         }
-        
-        
     }
 }
 
@@ -48,7 +47,7 @@ struct EventsView: View {
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView(sport: true, date: false)
+        EventsView()
             .environmentObject(SportViewModel())
     }
 }
