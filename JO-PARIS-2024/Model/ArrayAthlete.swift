@@ -10,7 +10,7 @@ import Foundation
 // Structure des athlètes
 
 struct Athlete: Identifiable, Codable {
-    var id: UUID = UUID()
+    var id: String = ""
     var nameAthlete: String
     var photoAthlete: String
     var genre: String
@@ -21,8 +21,6 @@ struct Athlete: Identifiable, Codable {
     var awards: String
     
     /*
-    
-     
      "nameAthlete": "Fred Kerley",
      "genre": "Homme",
      "country": "USA",

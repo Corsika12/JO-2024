@@ -20,7 +20,7 @@ struct AddAthleteView: View {
                     athlete in
                     
                     Button {
-                        userVM.addAthlete (currentUser: userVM.users[0], addAthlete: athlete)
+                        userVM.addAthlete (currentUser: &userVM.users[0], addAthlete: athlete)
                         addingStuff += 1
                         print(userVM.users[0].favoriteAthlete)
                     } label: {
@@ -44,6 +44,5 @@ struct AddAthleteView_Previews: PreviewProvider {
         AddAthleteView()
             .environmentObject(AthleteViewModel())
             .environmentObject(UserViewModel())
-
     }
 }

@@ -20,7 +20,7 @@ struct AddSportView: View {
                     sport in
                     
                     Button {
-                        userVM.addSport (currentUser: userVM.users[0], addSport: sport)
+                        userVM.addSport (currentUser: &userVM.users[0], addSport: sport)
                         addingStuff += 1
                         print(userVM.users[0].favoriteSport)
                     } label: {

@@ -22,7 +22,7 @@ struct AddCountryView: View {
                     country in
                 
                     Button {
-                            userVM.addCountry (currentUser: userVM.users[0], addCountry: country)
+                        userVM.addCountry (currentUser: &userVM.users[0], addCountry: country)
                         addingStuff += 1
                         print(userVM.users[0].favoriteCountry)
                     } label: {

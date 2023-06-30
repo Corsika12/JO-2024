@@ -7,12 +7,19 @@
 
 import Foundation
 
-struct Country: Identifiable {
-    var id: UUID = UUID()
+struct Country: Identifiable, Codable {
+    var id: String = ""
     var country: String // Enumérations des pays
     var continent: String // Les 5 continents
     var codeCountry: String // Abréviation du pays (ex : Fr)
     var flagCountry: String // Drapeaux à ajouter dans les Assets
+
+    enum CodingKeys: String, CodingKey {
+        case country
+        case continent
+        case codeCountry
+        case flagCountry
+    }
 }
 
 let italy = Country(country: "Italie",continent: "Europe", codeCountry: "IT", flagCountry: "italy")
@@ -22,8 +29,9 @@ let brazil = Country(country: "Brésil",continent: "Amérique du Sud", codeCount
 let newZeland = Country(country: "Nouvelle-Zélande", continent: "Océanie", codeCountry: "NZ", flagCountry: "new zeland")
 
 
+
 /* --------  To Do  --------
- 
- Possibilité de convertir Excel en JSON
- 
+
+A voir si externalisé sur Cloud Airtable ?
+
  */

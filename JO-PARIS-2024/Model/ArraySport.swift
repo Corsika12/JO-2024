@@ -9,11 +9,12 @@ import Foundation
 
 // Structure des sports
 
-struct Sport: Identifiable {
-    var id: UUID = UUID()
-    var sport: String // Enumérations des 54 sports ?
+struct Sport: Identifiable, Codable {
+    var id: String = ""
+    var sport: String // Enumérations des 54 sports
     var iconSport: String // Logo du sport
 }
+
 
 let athetisme = Sport(sport: "Athlétisme", iconSport: "")
 
@@ -79,6 +80,6 @@ let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery")
 
 /* --------  To Do  --------
  
- Possibilité de convertir Excel en JSON
+ Infos sur Airtable, constantes à supprimer ?
  
  */

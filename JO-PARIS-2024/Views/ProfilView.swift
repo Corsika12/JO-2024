@@ -5,7 +5,6 @@
 //  Created by M on 21/06/2023.
 //
 
-
 import SwiftUI
 
 // --------  Ecran de profil de l'utilisateur  --------
@@ -21,101 +20,135 @@ struct ProfilView: View {
     var body: some View {
         NavigationView() {
             ScrollView {
-                VStack{
+                
+                if !userVM.users.isEmpty{
                     
-                    HStack{
-                        Image(userVM.users[0].userImage) // image du profil
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .frame(width: 80, height: 80)
+                    VStack(alignment: .leading, spacing: 0){
                         
-                        VStack(alignment:.leading){
-                            Text(userVM.users[0].userFirstName)// prénom et nom de l'utilisateur
-                                .font(.title2)
-                                .bold()
-                            Text(userVM.users[0].userLastName)
-                                .foregroundColor(.gray)
-                        }
-                        .padding(70)
+                        ZStack {
+                            Color("PearlBush")
+                            HStack{
+                                AsyncImage(url: URL(string: userVM.users[0].userImage) ){
+                                    image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .clipShape(Circle())
+                                        .frame(width: 80, height: 80)
+                                        .padding()
+                                } placeholder: {
+                                    Text("chargement photo de profil")
+                                } // image du profil
+                                
+                                VStack(alignment:.leading){
+                                    Text(userVM.users[0].userFirstName)// prénom et nom de l'utilisateur
+                                        .font(.title2)
+                                        .bold()
+                                    Text(userVM.users[0].userLastName)
+                                        .foregroundColor(.gray)
+                                }
+                                .font(Font.custom("Paris2024-Variable", size: 20))
+                                .padding(70)
+                                
+                                Button {
+                                    isShown.toggle()
+                                } label: {
+                                    Image(systemName:"gearshape")
+                                }
+                                .tint(.black)// bouton réglages
+                                .sheet(isPresented: $isShown) {
+                                    SettingsView(isModaleShown: $isShown)
+                                }
+                            }
+                        } // fin de l'entête du profil
                         
-                        Button {
-                            isShown.toggle()
-                        } label: {
-                            Image(systemName:"gearshape")
-                        }
-                        .tint(.black)// bouton réglages
-                        .sheet(isPresented: $isShown) {
-                            SettingsView(isModaleShown: $isShown)
-                        }
-                    } // fin de l'entête du profil
-                    
-                    
-                    Text("Pays")//titre cathégorie
-                        .font(.title3)
-                        .bold()
-                    ScrollView(.horizontal) {
-                        HStack{
-                            
-                            ForEach (userVM.users[0].favoriteCountry) {
-                                country in
-                                CountryProfilView(flagCountry: country.flagCountry, country: country.country)
-                            }// pays
-                            
-                            NavigationLink {
-                                AddCountryView()
-                            } label: {
-                                AddView()
-                            }
-                            
-                        }
+                        Divider()
                         
-                    }//fin scrollView pays
-                    
-                    Text("Sports")//titre cathégorie
-                        .font(.title3)
-                        .bold()
-                    ScrollView(.horizontal) {
-                        HStack{
-                            
-                            ForEach(userVM.users[0].favoriteSport){
-                                sport in
-                                SportProfilView(image: sport.iconSport, nameSport: sport.sport)
-                            }
-                            //premier sport
-                            
-                            NavigationLink {
-                                AddSportView()
-                            } label: {
-                                AddView()
-                            }
-                        }
-                    }//fin ScrollView sport
-                    
-                    
-                    Text("Athlètes")//titre cathégorie
-                        .font(.title3)
-                        .bold()
-                    ScrollView(.horizontal) {
-                        HStack{
-                            ForEach(userVM.users[0].favoriteAthlete){
-                                athlete in
-                                AthleteProfilView(image:athlete.photoAthlete, nameAthlete: athlete.nameAthlete )
+                        Text("Pays")//titre cathégorie
+                            .font(.title3)
+                            .bold()
+                            .padding()
+                        //                        .font(Font.custom("Paris2024-Variable", size: 24))
+                        
+                        ScrollView(.horizontal) {
+                            HStack{
+                                
+                                ForEach (userVM.users[0].favCountry) {
+                                    country in
+                                    CountryProfilView(flagCountry: country.flagCountry, country: country.country)
+                                }// pays
+                                
+                                NavigationLink {
+                                    AddCountryView()
+                                } label: {
+                                    AddView()
+                                }
                             }
                             
-                            NavigationLink {
-                                AddAthleteView()
-                            } label: {
-                                AddView()
+                        }//fin scrollView pays
+                        
+                        Divider()
+                            .padding()
+                        
+                        Text("Sports")//titre cathégorie
+                            .font(.title3)
+                            .bold()
+                            .padding()
+                        //                        .font(Font.custom("Paris2024-Variable", size: 24))
+                        
+                        ScrollView(.horizontal) {
+                            HStack{
+                                
+                                ForEach(userVM.users[0].favSport){
+                                    sport in
+                                    SportProfilView(image: sport.iconSport, nameSport: sport.sport)
+                                }
+                                //premier sport
+                                
+                                NavigationLink {
+                                    AddSportView()
+                                } label: {
+                                    AddView()
+                                }
                             }
-                        }
-                    }//fin ScrollView athlete
+                        }//fin ScrollView sport
+                        
+                        Divider()
+                            .padding()
+                        
+                        
+                        Text("Athlètes")//titre cathégorie
+                            .font(.title3)
+                            .bold()
+                            .padding()
+                        //                        .font(Font.custom("Paris2024-Variable", size: 24))
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(userVM.users[0].favAthlete){
+                                    athlete in
+                                    AthleteProfilView(image:athlete.photoAthlete, nameAthlete: athlete.nameAthlete )
+                                }
+                                
+                                NavigationLink {
+                                    AddAthleteView()
+                                } label: {
+                                    AddView()
+                                }
+                            }
+                        }//fin ScrollView athlete
+                    }
+                }
+            }// fin grande VStack
+            .onAppear{
+                Task{
+                    await countryVM.fetchCountry()
+                    await userVM.fetchUser()
+                    userVM.getCountries(countryVM.countries)
                 }
             }
         }
         .onChange(of: addingStuff) { newValue in
             userVM.objectWillChange.send()
-            
         }
     }
 }
@@ -129,4 +162,3 @@ struct ProfilView_Previews: PreviewProvider {
             .environmentObject(SportViewModel())
     }
 }
-

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 // MARK: - SportsDataVM
 struct SportsDataVM: Codable, Identifiable {
@@ -24,7 +25,14 @@ struct SportsDataVM: Codable, Identifiable {
     var latitude, longitude: Double?
     var startDate, endDate: Date?
     var awards: String?
+
+    // Ajout de la propriété calculée 'coordinate'
+    var coordinate: CLLocationCoordinate2D? {
+        guard let latitude = latitude, let longitude = longitude else { return nil }
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
+
 
 class ReadData: ObservableObject {
     @Published var sportsDatas = [SportsDataVM]()
@@ -49,6 +57,8 @@ class ReadData: ObservableObject {
 }
 
 
+
+    
 /* --------  Tuto  --------
  
  https://medium.com/@nutanbhogendrasharma/read-json-data-from-file-system-in-swiftui-d054662000e
