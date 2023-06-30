@@ -23,6 +23,8 @@
 		0C4600B52A44A1D1003F7108 /* SportProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B42A44A1D1003F7108 /* SportProfilView.swift */; };
 		0C4600B72A44A298003F7108 /* AthleteProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B62A44A298003F7108 /* AthleteProfilView.swift */; };
 		0C4600B92A44A350003F7108 /* CountryProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4600B82A44A350003F7108 /* CountryProfilView.swift */; };
+		0C634B262A4ECCD2005BBDB4 /* SportsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C634B252A4ECCD2005BBDB4 /* SportsData.json */; };
+		0C634B282A4EDEF0005BBDB4 /* SportsDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C634B272A4EDEF0005BBDB4 /* SportsDataVM.swift */; };
 		0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A10BD2A4473ED00B3298F /* athlete.json */; };
 		0CB587BF2A45A95400E50EEF /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587BE2A45A95400E50EEF /* PickerView.swift */; };
 		0CB587C12A45E7A300E50EEF /* Picker2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB587C02A45E7A300E50EEF /* Picker2View.swift */; };
@@ -64,6 +66,8 @@
 		0C4600B42A44A1D1003F7108 /* SportProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportProfilView.swift; sourceTree = "<group>"; };
 		0C4600B62A44A298003F7108 /* AthleteProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteProfilView.swift; sourceTree = "<group>"; };
 		0C4600B82A44A350003F7108 /* CountryProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProfilView.swift; sourceTree = "<group>"; };
+		0C634B252A4ECCD2005BBDB4 /* SportsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SportsData.json; sourceTree = "<group>"; };
+		0C634B272A4EDEF0005BBDB4 /* SportsDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataVM.swift; sourceTree = "<group>"; };
 		0C785F582A4AC88200DFAC61 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0C7A10BD2A4473ED00B3298F /* athlete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = athlete.json; sourceTree = "<group>"; };
 		0CB587BE2A45A95400E50EEF /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				0CDD883F2A433DE1001DF0B0 /* ArrayEvent.swift */,
 				0CDD88432A434295001DF0B0 /* ArrayAthlete.swift */,
 				0C7A10BD2A4473ED00B3298F /* athlete.json */,
+				0C634B272A4EDEF0005BBDB4 /* SportsDataVM.swift */,
+				0C634B252A4ECCD2005BBDB4 /* SportsData.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			files = (
 				0C4600B12A4499FC003F7108 /* Paris2024-Variable.ttf in Resources */,
 				0CDD88252A433846001DF0B0 /* Preview Assets.xcassets in Resources */,
+				0C634B262A4ECCD2005BBDB4 /* SportsData.json in Resources */,
 				0CDD88222A433846001DF0B0 /* Assets.xcassets in Resources */,
 				0C7A10BE2A4473ED00B3298F /* athlete.json in Resources */,
 			);
@@ -309,6 +316,7 @@
 				0C2546142A4B0FB200146639 /* SettingsView.swift in Sources */,
 				0CDD88322A433BC2001DF0B0 /* ProfilView.swift in Sources */,
 				0C25460C2A4B0BF500146639 /* AddSportView.swift in Sources */,
+				0C634B282A4EDEF0005BBDB4 /* SportsDataVM.swift in Sources */,
 				0CDD88442A434295001DF0B0 /* ArrayAthlete.swift in Sources */,
 				0C15FC0F2A4C1695003E8A33 /* ButtonNewsView.swift in Sources */,
 				0C2546182A4B12DE00146639 /* AddAthleteView.swift in Sources */,
