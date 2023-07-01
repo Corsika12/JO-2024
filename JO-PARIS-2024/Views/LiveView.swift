@@ -2,41 +2,128 @@
 //  LiveView.swift
 //  JO-PARIS-2024
 //
-//  Created by M on 21/06/2023.
+//  Created by Hamza on 21/06/2023.
 //
 
 import SwiftUI
-import AVKit
+import WebKit
+import MediaPlayer
+import AudioToolbox
 
 struct LiveView: View {
-    @State private var player: AVPlayer?
-    var videoURL: String = "https://www.youtube.com/embed/SINpbLxXNgw"
-
+    let id2 = ["www.youtube.com/watch?v=P-CB-crOioI&t=2s","www.youtube.com/watch?v=A3rkngDMc90","www.youtube.com/watch?v=6if87wCZfAA","www.youtube.com/watch?v=NjIU8lSNTy4","www.youtube.com/watch?v=McMpFs2Hdxk","www.youtube.com/watch?v=Xv4F8NevHwM"]
+    
     var body: some View {
-        VideoPlayer(player: player, videoOverlay: {
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    Text("Video en live")
-                        .foregroundColor(.white)
-                        .padding(10)
+        
+        VStack {
+            CollectionView()
+            Text("Temps Forts")
+            
+                .font(Font.custom("Paris2024-Variable", size: 24))
+                .foregroundColor(Color(red: 1, green: 0, blue: 0.23))
+                .padding(.horizontal, 15)
+            
+            ScrollView(){
+                ForEach(id2, id:\.self) { idData in
+                    VideoStreamingView(videoId: idData)
+                        .frame(width: UIScreen.main.bounds.width - 40, height: 200)
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
                 }
             }
-        })
-        .onAppear {
-            guard let url = URL(string: videoURL) else {
-                return
-            }
-            player = AVPlayer(url: url)
-            player?.play()
-        }
-        .onDisappear {
-            player?.pause()
-        }
-        .frame(height: 400)
+        }  // Fin de la VStack
     }
 }
+
+struct VideoStreamingView: UIViewRepresentable {
+    let videoId: String
+    
+    func makeUIView(context: Context) ->  WKWebView {
+        let webview = WKWebView()
+        
+        // URL Youtube
+        if videoId.count <= 12 {
+            guard let videoURL = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return webview }
+            let request = URLRequest(url: videoURL, cachePolicy: .returnCacheDataElseLoad)
+            webview.load(request)
+            webview.scrollView.isScrollEnabled = false
+            
+            //           Autres URL
+        } else {
+            guard let videoURL = URL(string: "https://\(videoId)") else { return webview }
+            let request = URLRequest(url: videoURL, cachePolicy: .returnCacheDataElseLoad)
+            webview.load(request)
+            webview.scrollView.isScrollEnabled = false
+        }
+        return webview
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) { }
+}
+
+struct CollectionView: View {
+    
+    
+    // Uniquement l'Id pour Youtube ; URL longue pour les autres plateformes de streaming
+    let ids = ["www.youtube.com/watch?v=wfzx6IK4v8w","www.youtube.com/watch?v=Ge-vsGOnsPs","www.youtube.com/watch?v=glv8VupnUnc"]
+    
+    @State private var selectFilter = 0
+    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Apache"))
+    }
+    var body: some View {
+        NavigationView{
+            VStack{
+                Text("Live")
+                
+                    .font(Font.custom("Paris2024-Variable", size: 24))
+                    .foregroundColor(Color(red: 1, green: 0, blue: 0.23))
+                    .padding(.horizontal, 15)
+                
+                ZStack {
+                    VStack {
+                        
+                        VStack {
+                            Picker("Choix de la catégorie", selection: $selectFilter) {
+                                Text("Live").tag(0)
+                                Text("My vidéo").tag(1)
+                            }
+                            .pickerStyle(.segmented)
+                            .padding(4)
+                            .background(Color("Pearl Bush"))
+                            
+                            Spacer()
+                            
+                            if selectFilter == 0 {
+                                ScrollView(.horizontal){
+                                    HStack {
+                                        ForEach(ids, id:\.self) { idData in
+                                            VideoStreamingView(videoId: idData)
+                                                .frame(width: UIScreen.main.bounds.width - 40, height: 200)
+                                                .cornerRadius(20)
+                                                .shadow(radius: 10)
+                                                .padding(.horizontal, 20)
+                                                .padding(.vertical, 10)
+                                        }
+                                    }
+                                }
+                                
+                            } else if selectFilter == 1 {
+                                MyVideosView()
+                                
+                            }
+                            Spacer()
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 struct LiveView_Previews: PreviewProvider {
     static var previews: some View {
@@ -46,7 +133,7 @@ struct LiveView_Previews: PreviewProvider {
 
 
 /* --------  Tuto  --------
-
-A étudier : https://mia-e.medium.com/how-to-add-a-video-player-in-your-swiftui-app-using-avkit-beginner-tutorial-ffce69af486
-
-*/
+ 
+ A étudier : https://mia-e.medium.com/how-to-add-a-video-player-in-your-swiftui-app-using-avkit-beginner-tutorial-ffce69af486
+ 
+ */
