@@ -8,8 +8,6 @@
 // MapSportsViewModel.swift
 
 
-
-
 import Foundation
 import MapKit
 import CoreLocation
@@ -18,12 +16,19 @@ class ReadData: ObservableObject {
     @Published var sportsDatas = [SportsDataModel]()
     @Published var selectedSports: [String] = []
     @Published var selectedDateSport: Date = Date()
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
-    
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
+//    @Published var region = MKCoordinateRegion()
+
+    // Pour mettre à jour la région basée sur le sport sélectionné
+    func updateRegion(for sport: SportsDataModel) {
+            guard let coordinate = sport.coordinate else { return }
+            region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 1.10, longitudeDelta: 1.10))
+        }
+
     init() {
         loadData()
     }
-    
+
     func loadData() {
         guard let url = Bundle.main.url(forResource: "SportsData", withExtension: "json") else {
             print("Json file not found")
@@ -34,24 +39,13 @@ class ReadData: ObservableObject {
             let data = try Data(contentsOf: url)
             let sportsDatas = try JSONDecoder().decode([SportsDataModel].self, from: data)
             self.sportsDatas = sportsDatas
+            
         } catch {
-            print("Failed to load and decode file: \(error.localizedDescription)")
+            print("Failed to load and decode file: \(error)")
         }
     }
     
-    // Calcul du centre et de l'étendue de la région de la carte dans le ViewModel
-    func updateRegion() {
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
-        }
     
-    
-    // Afficher une seule ville sur la Map si 1 seule localisation
-        func adjustRegionForSingleCity(coordinate: CLLocationCoordinate2D) {
-            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05) // Ajuster ces valeurs pour modifier le niveau de zoom pour une seule ville
-            region = MKCoordinateRegion(center: coordinate, span: span)
-        }
-    
-
     // Fonction filtre par sports, pour la Map
     func filterSportsByType() {
         sportsDatas = sportsDatas.filter { sport in
@@ -61,69 +55,16 @@ class ReadData: ObservableObject {
             else {
                 return false
             }
-            
             return selectedSports.contains(sport.sports!) && startDate <= selectedDateSport && selectedDateSport <= endDate
         }
-        updateRegion()
     }
+} // Fin de la class ReadData
 
-    // Fonction filtre par date pour Seraphin
-    func filterSportsByDate() {
-        sportsDatas = sportsDatas.filter { sport in
-            guard sport.isValidSport,
-                  let startDate = sport.formattedStartDate,
-                  let endDate = sport.formattedEndDate
-            else {
-                return false
-            }
-            return selectedSports.contains(sport.sports!) && startDate <= selectedDateSport && selectedDateSport <= endDate
-        }
-        updateRegion()
-    }
-}
-
-
+    
+   
 
 
 /*
-import Foundation
-import MapKit
-import CoreLocation
-
-class ReadData: ObservableObject {
-    @Published var sportsDatas = [SportsDataModel]()
-    @Published var selectedSports: [String] = [] // Selectionner un ou des sports pour afficher les lieux sur la Map
-    @Published var selectedDateSport: Date = Date() // Initialise avec la date d'aujourd'hui
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
-    
-    init() {
-        loadData()
-    }
-    
-    func loadData() {
-        guard let url = Bundle.main.url(forResource: "SportsData", withExtension: "json")
-        else {
-            print("Json file not found")
-            return
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            let sportsDatas = try JSONDecoder().decode([SportsDataModel].self, from: data)
-            self.sportsDatas = sportsDatas
-        } catch {
-            print("Failed to load and decode file: \(error.localizedDescription)")
-        }
-    }
-    
-    // Fonction pour filtrer les sports par date
-    func filterSportsByDate() {
-        sportsDatas = sportsDatas.filter { sport in
-            guard let startDate = sport.formattedStartDate, let endDate = sport.formattedEndDate else {
-                return false
-            }
-            
-            return startDate <= selectedDateSport && selectedDateSport <= endDate
-        }
-    }
-}
-*/
+func updateRegion() {
+    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
+}*/

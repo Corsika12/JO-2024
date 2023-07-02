@@ -26,6 +26,7 @@ struct SportsDataModel: Codable, Identifiable {
         case startDate = "StartDate"
         case endDate = "EndDate"
         case awards = "Awards"
+        case detailSport = "DetailSport"
     }
     
     var formattedStartDate: Date? {
