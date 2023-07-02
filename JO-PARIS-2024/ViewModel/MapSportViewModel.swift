@@ -41,13 +41,7 @@ class ReadData: ObservableObject {
     
     // Calcul du centre et de l'étendue de la région de la carte dans le ViewModel
     func updateRegion() {
-            let allCoordinates = sportsDatas.compactMap { $0.coordinate }
-            
-            if allCoordinates.count == 1 {
-                adjustRegionForSingleCity(coordinate: allCoordinates.first!)
-            } else {
                 region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
-            }
         }
     
     
