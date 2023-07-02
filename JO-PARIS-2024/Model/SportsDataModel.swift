@@ -8,8 +8,16 @@
 import Foundation
 import CoreLocation
 
-// MARK: - SportsDataVM
 struct SportsDataModel: Codable, Identifiable {
+    var id: UUID = UUID()
+    var sports, localisation: String?
+    var latitude, longitude: Double?
+    var startDate, endDate: String?
+    var awards: String?
+    var detailSport: String? 
+    var isValidSport: Bool {
+        return sports != nil
+    }
     
     enum CodingKeys: String, CodingKey {
         case sports = "Sports"
@@ -20,10 +28,6 @@ struct SportsDataModel: Codable, Identifiable {
         case awards = "Awards"
     }
     
-    var id: UUID = UUID()
-    var sports, localisation: String?
-    var latitude, longitude: Double?
-    var startDate, endDate: String?
     var formattedStartDate: Date? {
         let formatter = ISO8601DateFormatter()
         return formatter.date(from: self.startDate ?? "")
@@ -33,9 +37,6 @@ struct SportsDataModel: Codable, Identifiable {
         let formatter = ISO8601DateFormatter()
         return formatter.date(from: self.endDate ?? "")
     }
-    
-    var awards: String?
-    
     // Ajout de la propriété calculée 'coordinate'
     var coordinate: CLLocationCoordinate2D? {
         guard let latitude = latitude, let longitude = longitude else { return nil }
