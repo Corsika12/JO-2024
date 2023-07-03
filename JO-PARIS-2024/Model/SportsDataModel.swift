@@ -29,6 +29,7 @@ struct SportsDataModel: Codable, Identifiable {
         case detailSport = "DetailSport"
     }
     
+    // Format anglais pour afficher sur DatePicker 
     var formattedStartDate: Date? {
         let formatter = ISO8601DateFormatter()
         return formatter.date(from: self.startDate ?? "")
@@ -38,6 +39,7 @@ struct SportsDataModel: Codable, Identifiable {
         let formatter = ISO8601DateFormatter()
         return formatter.date(from: self.endDate ?? "")
     }
+    
     // Ajout de la propriété calculée 'coordinate'
     var coordinate: CLLocationCoordinate2D? {
         guard let latitude = latitude, let longitude = longitude else { return nil }

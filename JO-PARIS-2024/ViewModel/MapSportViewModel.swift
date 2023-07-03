@@ -45,6 +45,13 @@ class ReadData: ObservableObject {
         }
     }
     
+    // Format date JJ MM AAAA
+    func formatFrenchDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM yyyy"
+        return dateFormatter.string(from: date)
+    }
+
     
     // Fonction filtre par sports, pour la Map
     func filterSportsByType() {

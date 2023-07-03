@@ -16,13 +16,27 @@ struct SportDetailView: View {
 
     var body: some View {
         ZStack {
-            VStack {
-                VStack {
+                    VStack {
+                        HStack {
+                            Button(action: {
+                                self.isPresented = false
+                            }) {
+                                HStack {
+                                    Image(systemName: "arrow.backward")
+                                    Text("Retour")
+                                }
+                            }
+                            .padding()
+                            Spacer()
+                        }
+                        
+                        VStack {
                     Text(sport.sports ?? "")
                         .font(.largeTitle)
                         .padding()
-                    
-                    Text("Du \(sport.startDate ?? "") au \(sport.endDate ?? ""). \(sport.awards ?? "")")
+                    VStack{
+                        Text("\(Image(systemName: "calendar.badge.clock")) du \(sport.startDate ?? "") au \(sport.endDate ?? "") : \n\(sport.awards ?? "")")
+                    }
                 }
                 .padding()
             
@@ -77,7 +91,7 @@ struct SportDetailView: View {
                         viewModel.defaultRegion.center = CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334)
                     }
                 }
-                
+                /* Button à supprimer
                 Button(action: {
                     self.isPresented = false
                 }) {
@@ -87,6 +101,7 @@ struct SportDetailView: View {
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                 }
+                    */
             }
         }.onAppear {
             viewModel.loadData()
