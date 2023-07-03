@@ -7,7 +7,6 @@
 
 // MapSportsViewModel.swift
 
-
 import Foundation
 import MapKit
 import CoreLocation
@@ -16,13 +15,14 @@ class ReadData: ObservableObject {
     @Published var sportsDatas = [SportsDataModel]()
     @Published var selectedSports: [String] = []
     @Published var selectedDateSport: Date = Date()
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
-//    @Published var region = MKCoordinateRegion()
-
+    @Published var mapRegion = CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334)
+   
+    @Published var defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
+    
     // Pour mettre à jour la région basée sur le sport sélectionné
     func updateRegion(for sport: SportsDataModel) {
             guard let coordinate = sport.coordinate else { return }
-            region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 1.10, longitudeDelta: 1.10))
+        defaultRegion.center = coordinate
         }
 
     init() {

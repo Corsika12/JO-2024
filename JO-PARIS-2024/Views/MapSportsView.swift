@@ -27,8 +27,8 @@ struct MapSportsView: View {
                                 } else {
                                     viewModel.selectedSports.append(sport.sports!)
                                     self.selectedSport = sport
-                                    self.showingDetailView = true
                                     viewModel.updateRegion(for: sport)  // Appeler la méthode updateRegion lorsque le sport est sélectionné
+                                    self.showingDetailView = true
                                 }
                             }) {
                                 HStack {
