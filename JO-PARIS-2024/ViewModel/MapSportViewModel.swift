@@ -24,7 +24,7 @@ class ReadData: ObservableObject {
             guard let coordinate = sport.coordinate else { return }
         defaultRegion.center = coordinate
         }
-
+    
     init() {
         loadData()
     }
@@ -59,12 +59,3 @@ class ReadData: ObservableObject {
         }
     }
 } // Fin de la class ReadData
-
-    
-   
-
-
-/*
-func updateRegion() {
-    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
-}*/

@@ -131,8 +131,8 @@
 				0C2546152A4B10AA00146639 /* UserViewModel.swift */,
 				0C25460D2A4B0CCD00146639 /* CountryViewModel.swift */,
 				0C25460F2A4B0D0700146639 /* SportViewModel.swift */,
-				0C634B2B2A4EFDF7005BBDB4 /* MapSportViewModel.swift */,
 				0C2546112A4B0D4400146639 /* AthleteViewModel.swift */,
+				0C634B2B2A4EFDF7005BBDB4 /* MapSportViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
