@@ -52,7 +52,8 @@ struct SportDetailView: View {
                                 .foregroundColor(Color("Zeus").opacity(0.7))
                                 .padding(.bottom, 24)
                         }
-//                        .padding(.bottom, 24)
+                        .padding(.horizontal, 16)
+
                 }
                 
                 // Carte avec le sport sélectionné
@@ -60,16 +61,20 @@ struct SportDetailView: View {
                     MapAnnotation(coordinate: place.coordinate!) { // Utilisez la propriété 'coordinate' du modèle
                         VStack {
                             //                            Image(systemName: "mappin")
-                            Text("📍")
-                                .font(.title)
+                            Image("pin")
+                                .foregroundColor(Color("RougeAmour"))
+//                            Text("📍")
+//                                .font(.title)
 //                                .foregroundColor(Color("RougeAmour"))
                             Text("\(place.localisation!)")
-//                                .font(Font.custom("Paris2024-Variable"
-                                .foregroundColor(Color("Zeus"))
-                                .font(.system(size: 14))
-                                .fontWeight(.medium)
-                                .padding(4)
-                                .background(Color.white.opacity(0.95))
+                              .font(.system(size: 14))
+                              .fontWeight(.medium)
+                              .padding(6)
+                              .background(Color.white.opacity(0.95))
+                              .overlay(RoundedRectangle(cornerRadius: 10)
+                              .stroke(Color("Apache"), lineWidth: 1))  // Ajout de la bordure de couleur personnalisée
+
+                            
                                 
                         }
                         //                        .padding()
