@@ -11,7 +11,9 @@ import CoreLocation
 
 struct SportDetailView: View {
     var sport: SportsDataModel
+    // Formatage de la date en utilisant la fonction dans MapSportsViewModel
     @ObservedObject var viewModel = ReadData()
+    //
     @Binding var isPresented: Bool
 
     var body: some View {
@@ -22,28 +24,38 @@ struct SportDetailView: View {
                                 self.isPresented = false
                             }) {
                                 HStack {
-                                    Image(systemName: "arrow.backward")
-                                    Text("Retour")
+                                    Image(systemName: "chevron.left")
+                                        .padding(.horizontal, 16)
+                                    Spacer ()
+                                    HStack {
+                                        Text(sport.sports!)
+                                            .font(.title2)
+    //                                        .font(Font.custom("Paris2024-Variable", size: 24))
+                                            .foregroundColor(Color(red: 1, green: 0, blue: 0.23))
+    //                                        .padding(.horizontal, 15)
+                                    }
+                                    Spacer ()
                                 }
                             }
-                            .padding()
-                            Spacer()
+                            .padding(.bottom, 32)
                         }
                         
                         VStack {
-                    Text(sport.sports ?? "")
+                    Text("")
                         .font(.largeTitle)
-                        .padding()
                             VStack{
-//                                Text("\(Image(systemName: "calendar.badge.clock")) du \(sport.startDate ?? "") au \(sport.endDate ?? "") : \n\(sport.awards ?? "")")
-                                Text("\(Image(systemName: "calendar.badge.clock")) du \(viewModel.formatFrenchDate(date: sport.formattedStartDate!)) au \(viewModel.formatFrenchDate(date: sport.formattedEndDate!)) : \n\(sport.awards ?? "")")
+                                Text("Du \(viewModel.formatFrenchDate(date: sport.formattedStartDate!)) au \(viewModel.formatFrenchDate(date: sport.formattedEndDate!))")
                                 
-//                                formatFrenchDate
+                                    .foregroundColor(Color("Zeus"))
+                                    .fontWeight(.semibold)
+//                                    .padding(.bottom, 8)
+                                
+                                Text("\n\(sport.awards ?? "")")
+                                    .foregroundColor(Color("Zeus").opacity(0.7))
+                                    .padding(.bottom, 24)
                             }
                 }
-                .padding()
             
-
                 // Carte avec le sport sélectionné
                 Map(coordinateRegion: $viewModel.defaultRegion, showsUserLocation: true, annotationItems: viewModel.sportsDatas.filter { $0.sports! == sport.sports }) { place in
                             MapAnnotation(coordinate: place.coordinate!) { // Utilisez la propriété 'coordinate' du modèle
@@ -52,12 +64,16 @@ struct SportDetailView: View {
                             Text("📍")
                                 .font(.title)
                             Text("\(place.localisation!)")
-                                .font(.system(size: 14))
+                                .font(.system(size: 16))
                                 .foregroundColor(Color("Zeus"))
-                                .background(Color.white.opacity(0.5))
+                                .fontWeight(.medium)
+                                .background(Color.white.opacity(0.95))
+                                .padding(32)
                         }
+                                .padding()
                     }
                 }
+                .edgesIgnoringSafeArea(.all)
                 .onAppear {
                     let sports = viewModel.sportsDatas.filter { $0.sports! == sport.sports }
                     
@@ -105,7 +121,7 @@ struct SportDetailView: View {
 /*
 struct SportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SportDetailView(sport: SportsDataModel(), isPresented: .constant(true))
+        SportDetailView(sport: SportsDataModel("XXX"), isPresented: .constant(true))
     }
 }
 */

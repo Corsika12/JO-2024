@@ -2,7 +2,7 @@
 //  JO_PARIS_2024App.swift
 //  JO-PARIS-2024
 //
-//  Created by M on 21/06/2023.
+//  Created by Manu on 21/06/2023.
 //
 
 
@@ -27,7 +27,17 @@ struct JO_PARIS_2024App: App {
                 .environmentObject(countryVM)
                 .environmentObject(sportVM)
                 .environmentObject(athleteVM)
-
+                .onAppear{
+                    Task{
+                        await sportVM.fetchSport()
+                        await athleteVM.fetchAthlete()
+                        await countryVM.fetchCountry()
+                        await userVM.fetchUser()
+                        userVM.getCountries(countryVM.countries)
+                        userVM.getSport(sportVM.sports)
+                        userVM.getAthlete(athleteVM.athletes)
+                    }
+                }
         }
     }
 }

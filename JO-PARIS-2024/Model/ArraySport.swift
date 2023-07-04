@@ -22,6 +22,8 @@ struct Sport: Identifiable, Codable {
     var iconSport: String
 
     var SportImage: String
+    
+    var SportArticle: String
 
     
 
@@ -32,6 +34,8 @@ struct Sport: Identifiable, Codable {
         case iconSport
 
         case SportImage
+        
+        case SportArticle
 
     } // Logo du sport
 
@@ -41,7 +45,7 @@ struct Sport: Identifiable, Codable {
 
 
 
-let athetisme = Sport(sport: "Athlétisme", iconSport: "", SportImage: "")
+let athetisme = Sport(sport: "Athlétisme", iconSport: "", SportImage: "", SportArticle: "")
 
 
 
@@ -63,7 +67,7 @@ BMX race
 
  
 
-let boxing = Sport(sport: "Boxe", iconSport: "figure.boxing", SportImage: "")
+let boxing = Sport(sport: "Boxe", iconSport: "figure.boxing", SportImage: "", SportArticle: "")
 
 
 
@@ -83,11 +87,11 @@ Cyclisme sur route
 
  
 
-let climbing = Sport(sport: "Escalade sportive", iconSport: "figure.climbing", SportImage: "")
+let climbing = Sport(sport: "Escalade sportive", iconSport: "figure.climbing", SportImage: "", SportArticle: "")
 
 
 
-let escrime = Sport(sport: "Escrime", iconSport: "figure.fencing", SportImage: "")
+let escrime = Sport(sport: "Escrime", iconSport: "figure.fencing", SportImage: "", SportArticle: "")
 
 // Escrime fauteuil
 
@@ -95,7 +99,7 @@ let escrime = Sport(sport: "Escrime", iconSport: "figure.fencing", SportImage: "
 
 
 
-let golf = Sport(sport: "Golf", iconSport: "figure.golf", SportImage: "")
+let golf = Sport(sport: "Golf", iconSport: "figure.golf", SportImage: "", SportArticle: "")
 
 //Gymnastique artistique
 
@@ -103,11 +107,11 @@ let golf = Sport(sport: "Golf", iconSport: "figure.golf", SportImage: "")
 
 //Haltérophilie
 
-let handball = Sport(sport: "Handball", iconSport: "figure.handball", SportImage: "")
+let handball = Sport(sport: "Handball", iconSport: "figure.handball", SportImage: "", SportArticle: "")
 
 //Hockey
 
-let judo = Sport(sport: "Judo", iconSport: "", SportImage: "")
+let judo = Sport(sport: "Judo", iconSport: "", SportImage: "", SportArticle: "")
 
 //Lutte
 
@@ -133,13 +137,13 @@ let judo = Sport(sport: "Judo", iconSport: "", SportImage: "")
 
 
 
-let tennis = Sport(sport: "Tennis", iconSport: "tennis.racket", SportImage: "")
+let tennis = Sport(sport: "Tennis", iconSport: "tennis.racket", SportImage: "", SportArticle: "")
 
 //Tennis de table
 
 //Tir
 
-let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery", SportImage: "")
+let archery = Sport(sport: "Tir à l'arc", iconSport: "figure.archery", SportImage: "", SportArticle: "")
 
 
 
