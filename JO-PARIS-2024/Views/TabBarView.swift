@@ -12,43 +12,51 @@ struct TabBarView: View {
     
     @State private var selectedTab: Int = 0
     
-    // Couleur de fond de la TabBar
     init() {
-            UITabBar.appearance().barTintColor = UIColor(.white)
-        }
+            // Couleur de fond de la TabBar
+            UITabBar.appearance().backgroundColor = UIColor.white
+            // Couleur personnalisée des icones inactives
+            UITabBar.appearance().unselectedItemTintColor = UIColor(named: "Grey")
+    }
     
     var body: some View {
-        
         TabView(selection: $selectedTab) {
-                    NewsView()
-                        .tabItem{
-                            Label("Actus", systemImage: "newspaper")
-                                .environment(\.symbolVariants, .none)
-                                .opacity(selectedTab == 0 ? 1 : 0.5)
-                        }.tag(0)
-
-                    LiveView()
-                        .tabItem{
-                            Label("Live", systemImage: "play.square.stack")
-                                .environment(\.symbolVariants, .none)
-                                .opacity(selectedTab == 1 ? 1 : 0.5)
-                                
-                        }.tag(1)
-
-                    EventsView()
-                        .tabItem{
-                            Label("Evènements", systemImage: "calendar.badge.clock")
-                                .environment(\.symbolVariants, .none)
-                                .opacity(selectedTab == 2 ? 1 : 0.5)
-                        }.tag(2)
-
-                    ProfilView()
-                        .tabItem{
-                            Label("Profil", systemImage: "person")
-                                .environment(\.symbolVariants, .none)
-                                .opacity(selectedTab == 3 ? 1 : 0.5)
-                        }.tag(3)
+            NewsView()
+                .tabItem {
+                    Image(systemName: "newspaper")
+                        .resizable()
+                        .environment(\.symbolVariants, .none)
+                    Text("Actus")
                 }
+                .tag(0)
+
+            LiveView()
+                .tabItem {
+                    Image(systemName: "play.square.stack")
+                        .resizable()
+                        .environment(\.symbolVariants, .none)
+                    Text("Live")
+                }
+                .tag(1)
+            
+            EventsView()
+                .tabItem {
+                    Image(systemName: "calendar.badge.clock")
+                        .resizable()
+                        .environment(\.symbolVariants, .none)
+                    Text("Evènements")
+                }
+                .tag(2)
+
+            ProfilView()
+                .tabItem {
+                    Image(systemName: "person")
+                        .resizable()
+                        .environment(\.symbolVariants, .none)
+                    Text("Profil")
+                }
+                .tag(3)
+        }
         .tint(Color("Apache"))
     }
 }

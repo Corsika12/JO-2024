@@ -15,6 +15,7 @@ class ReadData: ObservableObject {
     @Published var sportsDatas = [SportsDataModel]()
     @Published var selectedSports: [String] = []
     @Published var selectedDateSport: Date = Date()
+    
     @Published var mapRegion = CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334)
    
     @Published var defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334), span: MKCoordinateSpan(latitudeDelta: 11.0, longitudeDelta: 11.0))
@@ -48,10 +49,19 @@ class ReadData: ObservableObject {
     // Format date JJ MM AAAA
     func formatFrenchDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMMM yyyy"
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris")
+        dateFormatter.dateFormat = "dd MMMM yyyy"
         return dateFormatter.string(from: date)
     }
 
+    /*
+     // pour un affichage :  20 janv. 2017 à 22:29:51
+     let french       = DateFormatter()
+     french.dateStyle = .medium
+     french.timeStyle = .medium
+     french.locale    = Locale(identifier: "FR-fr")
+     */
     
     // Fonction filtre par sports, pour la Map
     func filterSportsByType() {
@@ -66,3 +76,16 @@ class ReadData: ObservableObject {
         }
     }
 } // Fin de la class ReadData
+
+
+
+/* ------- TUTO  -------
+ 
+
+ 
+ Convertir une date au format Fr
+ https://developer.apple.com/documentation/foundation/dateformatter/
+ 
+ https://support.apple.com/fr-fr/guide/shortcuts/apd8d9b19184/ios
+ 
+ */

@@ -31,14 +31,21 @@ struct SportsDataModel: Codable, Identifiable {
     
     // Format anglais pour afficher sur DatePicker 
     var formattedStartDate: Date? {
-        let formatter = ISO8601DateFormatter()
-        return formatter.date(from: self.startDate ?? "")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris")
+        dateFormatter.dateFormat = "MM/dd/yy"
+        return dateFormatter.date(from: self.startDate ?? "")
     }
     
     var formattedEndDate: Date? {
-        let formatter = ISO8601DateFormatter()
-        return formatter.date(from: self.endDate ?? "")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris")
+        dateFormatter.dateFormat = "MM/dd/yy"
+        return dateFormatter.date(from: self.endDate ?? "")
     }
+    
     
     // Ajout de la propriété calculée 'coordinate'
     var coordinate: CLLocationCoordinate2D? {

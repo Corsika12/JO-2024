@@ -34,9 +34,12 @@ struct SportDetailView: View {
                     Text(sport.sports ?? "")
                         .font(.largeTitle)
                         .padding()
-                    VStack{
-                        Text("\(Image(systemName: "calendar.badge.clock")) du \(sport.startDate ?? "") au \(sport.endDate ?? "") : \n\(sport.awards ?? "")")
-                    }
+                            VStack{
+//                                Text("\(Image(systemName: "calendar.badge.clock")) du \(sport.startDate ?? "") au \(sport.endDate ?? "") : \n\(sport.awards ?? "")")
+                                Text("\(Image(systemName: "calendar.badge.clock")) du \(viewModel.formatFrenchDate(date: sport.formattedStartDate!)) au \(viewModel.formatFrenchDate(date: sport.formattedEndDate!)) : \n\(sport.awards ?? "")")
+                                
+//                                formatFrenchDate
+                            }
                 }
                 .padding()
             
@@ -91,17 +94,6 @@ struct SportDetailView: View {
                         viewModel.defaultRegion.center = CLLocationCoordinate2D(latitude: 46.603354, longitude: 1.888334)
                     }
                 }
-                /* Button à supprimer
-                Button(action: {
-                    self.isPresented = false
-                }) {
-                    Text("Fermer")
-                        .padding()
-                        .background(Color("Apache"))
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                }
-                    */
             }
         }.onAppear {
             viewModel.loadData()
