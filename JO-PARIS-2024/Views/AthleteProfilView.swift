@@ -25,6 +25,7 @@ struct AthleteProfilView: View {
                 Text("Chargement photo des Athlètes")
             }
             Text(nameAthlete)
+                .padding(.top, -12)
         }// fin premier Athlète
 //        .padding(30)
     }

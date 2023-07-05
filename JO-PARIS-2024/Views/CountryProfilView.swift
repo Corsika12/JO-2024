@@ -19,6 +19,7 @@ struct CountryProfilView: View {
                     .scaledToFill()
                     .frame(width:150,height:150)
                 Text(country)
+                .padding(.top, -20)
             }// fin premier pays
         .padding(.leading, 24)
     }

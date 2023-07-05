@@ -17,7 +17,7 @@ struct NewsView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("Favoris")
+                    Text("A la une")
                         .font(Font.custom("Paris2024-Variable", size: 24))
                         .foregroundColor(Color(red: 1, green: 0, blue: 0.23))
                         .padding(.horizontal, 15)

@@ -26,7 +26,11 @@ struct LiveView: View {
         
         ZStack {
             VStack {
+                
                 VStack {
+                    
+//                    Masquer le Picker
+                    /*
                     Picker("Choix de la catégorie", selection: $selectFilter) {
                         Text("Live").tag(0)
                         Text("Mes vidéos").tag(1)
@@ -38,7 +42,7 @@ struct LiveView: View {
                     Spacer()
                     
                     if selectFilter == 0 {
-                        
+                        */
                         VStack{
                             Text("Live")
                                 .font(Font.custom("Paris2024-Variable", size: 24))
@@ -79,11 +83,11 @@ struct LiveView: View {
                                 }
                             }
                         }  // Fin de la VStack
-                        
+                        /*
                     } else if selectFilter == 1 {
                         MyVideosView()
                         
-                    }
+                    } */
                     Spacer()
                 }
             }

@@ -52,7 +52,7 @@ struct NewsDetailView: View {
                                 .font(.title3)
                                 .foregroundColor(Color.white.opacity(0.95))
                                 .padding(.bottom, 96)
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, 24)
                         } // Fin de la VStack
                         Spacer()
                         

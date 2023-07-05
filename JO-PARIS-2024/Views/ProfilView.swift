@@ -47,7 +47,7 @@ struct ProfilView: View {
                                 // image du profil
                                 
                                 VStack(alignment:.leading){
-                                    Text(userVM.users[0].userFirstName)// prénom et nom de l'utilisateur
+                                    Text(userVM.users[0].userFirstName) // prénom et nom de l'utilisateur
                                     //
                                         .fontWeight(.semibold)
                                     Text(userVM.users[0].userLastName)
@@ -80,7 +80,7 @@ struct ProfilView: View {
                             //                            .font(.title3)
                                 .fontWeight(.semibold)
                                 .font(Font.custom("Paris2024-Variable", size: 24))
-                                .padding(.vertical, 24)
+                                .padding(.top, 24)
                             
                             ScrollView(.horizontal) {
                                 HStack(spacing: 0){
@@ -106,7 +106,7 @@ struct ProfilView: View {
                             //                            .font(.title3)
                                 .font(Font.custom("Paris2024-Variable", size: 24))
                                 .fontWeight(.semibold)
-                                .padding()
+                                .padding(.vertical, 24)
                             
                             ScrollView(.horizontal) {
                                 HStack{
