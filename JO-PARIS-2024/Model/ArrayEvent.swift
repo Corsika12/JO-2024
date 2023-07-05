@@ -27,6 +27,13 @@ struct Event: Identifiable {
 var userLocale = Locale.autoupdatingCurrent
 var userCalendar = Calendar.autoupdatingCurrent
 
+let dateRange : ClosedRange<Date> = {
+    let calendar = Calendar.autoupdatingCurrent
+    let startComponents = DateComponents(year: 2024, month: 7, day: 26)
+    let endComponents = DateComponents(year: 2024, month : 9, day: 8)
+    return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
+}()
+
 var climbing0Components = DateComponents(
     year: 2024,
     month: 7,
@@ -43,6 +50,8 @@ var handball0Components = DateComponents(
     minute: 00
 )
 
+var tennis0 = Event(sport: tennis, epreuve: "Quarts de finale Femmes", lieu: "Paris", awards: "", paralympique: false, dateEvent: userCalendar.date(from: DateComponents(year: 2024, month: 8, day: 5, hour: 18, minute: 0))!)
+
 var openingCeremonyComponents = DateComponents (
     year: 2024,
     month: 7,
@@ -55,9 +64,8 @@ var boxe0 = Event(sport: boxing, epreuve: "Qualifications Poids-lourd", lieu: "P
 var climbing0 = Event(sport: climbing, epreuve: "Finale Vitesse", lieu: "Marseille", awards: "", paralympique: false, dateEvent: userCalendar.date(from: climbing0Components)!)
 var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", awards: "", paralympique: true, dateEvent: userCalendar.date(from: handball0Components)!)
 
-var events : [Event] = [boxe0, climbing0, handball0]
 
-
+var events : [Event] = [boxe0, climbing0, handball0, tennis0]
 
 /* --------  Tuto  --------
  

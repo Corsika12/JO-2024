@@ -10,15 +10,23 @@ import SwiftUI
 struct AddView: View {
     var body: some View {
             VStack{
-                Image(systemName:"plus.circle")
-                    .resizable()
-                    .frame(width:50,height:50)
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color("Pearl Bush"))
+                        .frame(width:44,height:44)
+                    Image(systemName:"plus")
+                        .resizable()
+                    .frame(width:20,height:20)
+                    .foregroundColor(Color(.gray))
+                }
 
                 Text("Ajouter")
+                    .foregroundColor(Color(.gray))
+
                     // .font(Font.custom("Paris2024-Variable", size: 24))
             }// Ajouter
             .padding(30)
-            .foregroundColor(.gray)
+
         }
     }
 

@@ -2,9 +2,8 @@
 //  ButtonNewsView.swift
 //  JO-PARIS-2024
 //
-//  Created by Rémi on 28/06/2023.
+//  Created by Rémy on 28/06/2023.
 //
-
 
 import SwiftUI
 
@@ -46,7 +45,7 @@ struct ButtonNewsView: View {
                 
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 342, height: 54)
+                    .frame(width: 342, height: 80)
                     .background(
                         LinearGradient(
                             stops: [
@@ -55,6 +54,7 @@ struct ButtonNewsView: View {
                             startPoint: UnitPoint(x: 0.5, y: 0),
                             endPoint: UnitPoint(x: 0.5, y: 1)))
                     .cornerRadius(26)
+                    .offset(y: 80)
                 
                 //                    Spacer()
                 Text(textFavori)
@@ -62,18 +62,12 @@ struct ButtonNewsView: View {
                     .bold()
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
-                    .offset(x: -70,y: 80)
+                    .offset(y: 100)
                 
             }
         }
     } // fin Zstack
-    
-    // fin label
-    
-    
 }
-
-//    }
 
 
 struct ButtonNewsView_Previews: PreviewProvider {
@@ -85,13 +79,3 @@ struct ButtonNewsView_Previews: PreviewProvider {
             .environmentObject(SportViewModel())
     }
 }
-
-//}
-
-/*
- struct ButtonNewsView_Previews: PreviewProvider {
- static var previews: some View {
- ButtonNewsView(imageFavori: "gignac", textFavori: "blablabla")
- }
- }
- */

@@ -2,26 +2,25 @@
 //  CountryProfilView.swift
 //  JO-PARIS-2024
 //
-//  Created by M on 22/06/2023.
+//  Created by Clara on 22/06/2023.
 //
 
 import SwiftUI
-
-// by Clara
 
 struct CountryProfilView: View {
     var flagCountry: String
     var country:String
     var body: some View {
 
-            VStack{
-                Image(flagCountry)
+        VStack(){
+
+                Image("\(flagCountry)")
                     .resizable()
                     .scaledToFill()
-                    .frame(width:100,height:100)
+                    .frame(width:150,height:150)
                 Text(country)
             }// fin premier pays
-            .padding(20)
+        .padding(.leading, 24)
     }
 }
 

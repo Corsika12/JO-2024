@@ -9,8 +9,40 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+struct MapView: UIViewRepresentable {
+    var coordinate: CLLocationCoordinate2D
+    var mapType: MKMapType
+    
+    func makeUIView(context: Context) -> MKMapView {
+        let mapView = MKMapView()
+        mapView.delegate = context.coordinator
+        return mapView
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.mapType = mapType
+        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        uiView.setRegion(region, animated: true)
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, MKMapViewDelegate {
+        var parent: MapView
+        
+        init(_ parent: MapView) {
+            self.parent = parent
+        }
+    }
+}
+
 struct SportDetailView: View {
     var sport: SportsDataModel
+    // Ajoutez la variable d'état pour le type de carte
+    @State private var mapType: MKMapType = .standard
     // Formatage de la date en utilisant la fonction dans MapSportsViewModel
     @ObservedObject var viewModel = ReadData()
     //
@@ -32,8 +64,8 @@ struct SportDetailView: View {
                                 // Title du sport
                                 HStack {
                                     Text(sport.sports!)
-//                                        .font(.title2)
-                                     .font(Font.custom("Paris2024-Variable", size: 24))
+                                    //                                        .font(.title2)
+                                        .font(Font.custom("Paris2024-Variable", size: 24))
                                         .foregroundColor(Color(red: 1, green: 0, blue: 0.23))
                                         .padding(.leading, -32)
                                 }
@@ -44,40 +76,43 @@ struct SportDetailView: View {
                         .padding(.bottom, 32)
                     }
                     
-                        VStack{
-                            Text("Du \(viewModel.formatFrenchDate(date: sport.formattedStartDate!)) au \(viewModel.formatFrenchDate(date: sport.formattedEndDate!))")
-                                .foregroundColor(Color("Zeus"))
-                                .fontWeight(.semibold)
-                            Text("\n\(sport.awards ?? "")")
-                                .foregroundColor(Color("Zeus").opacity(0.7))
-                                .padding(.bottom, 24)
-                        }
-                        .padding(.horizontal, 16)
-
+                    VStack{
+                        Text("Du \(viewModel.formatFrenchDate(date: sport.formattedStartDate!)) au \(viewModel.formatFrenchDate(date: sport.formattedEndDate!))")
+                            .foregroundColor(Color("Zeus"))
+                            .fontWeight(.semibold)
+                        Text("\n\(sport.awards ?? "")")
+                            .foregroundColor(Color("Zeus").opacity(0.7))
+                            .padding(.bottom, 24)
+                    }
+                    .padding(.horizontal, 16)
+                    
                 }
                 
                 // Carte avec le sport sélectionné
                 Map(coordinateRegion: $viewModel.defaultRegion, showsUserLocation: true, annotationItems: viewModel.sportsDatas.filter { $0.sports! == sport.sports }) { place in
-                    MapAnnotation(coordinate: place.coordinate!) { // Utilisez la propriété 'coordinate' du modèle
+                    MapAnnotation(coordinate: place.coordinate!) {
                         VStack {
                             //                            Image(systemName: "mappin")
-                            Image("pin")
+                            Image("pin2")
                                 .foregroundColor(Color("RougeAmour"))
-//                            Text("📍")
-//                                .font(.title)
-//                                .foregroundColor(Color("RougeAmour"))
-                            Text("\(place.localisation!)")
-                              .font(.system(size: 14))
-                              .fontWeight(.medium)
-                              .padding(6)
-                              .background(Color.white.opacity(0.95))
-                              .overlay(RoundedRectangle(cornerRadius: 10)
-                              .stroke(Color("Apache"), lineWidth: 1))  // Ajout de la bordure de couleur personnalisée
-
+                            //                            Text("📍")
+                            //                                .font(.title)
+                            //                                .foregroundColor(Color("RougeAmour"))
                             
-                                
+                            
+                            
+                            Text("\(place.localisation!)")
+                                .tint(.white)
+                                .font(.system(size: 14))
+                                .fontWeight(.semibold)
+                                .padding(6)
+                                .padding(.horizontal, 2)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color("Pearl Bush"), lineWidth: 1))  // Ajout de la bordure de couleur personnalisée
+//                                .background(Color.white.opacity(0.6))
                         }
-                        //                        .padding()
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
@@ -127,7 +162,7 @@ struct SportDetailView: View {
 /*
  struct SportDetailView_Previews: PreviewProvider {
  static var previews: some View {
- SportDetailView(sport: SportsDataModel("XXX"), isPresented: .constant(true))
+     SportDetailView(sport: XXXX, isPresented: .constant(true))
  }
  }
  */

@@ -11,7 +11,7 @@ struct EventListView: View {
     var body: some View {
         List {
             ForEach (sportFiltre()){ event in
-                HStack {
+                HStack(alignment: .top) {
                     Image(systemName: event.sport.iconSport)
                     
                     VStack (alignment: .leading){

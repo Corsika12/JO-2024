@@ -21,23 +21,31 @@ struct EventsView: View {
                     .font(.custom("Paris2024", size: 24))
                     .foregroundColor(Color("RougeAmour"))
                     .padding()
-                    
+                
                 Spacer()
             }
             
-            ButtonEvent(txt: "Dates", isPresented: $vm.date)
+            Spacer(minLength: 16)
             
-            ButtonEvent(txt: "Sport", isPresented: $vm.sport)
+            HStack {
+                Spacer()
+                ButtonEvent(txt: "Dates", isPresented: $vm.date)
+                Spacer()
+                ButtonEvent(txt: "Sport", isPresented: $vm.sport)
+                Spacer()
+            }
+            .tint(Color("Apache"))
             
             if vm.sport {
-                           SportListView()
-                       } else {
-                           EventListView()
-                       }
+                SportListView()
+            } else {
+                EventListView()
+            }
             
             Spacer()
             
             MapSportsView()
+                .tint(Color("Apache"))
         }
     }
 }
@@ -57,16 +65,24 @@ struct SportListView: View {
     @EnvironmentObject var sportVM: SportViewModel
     
     var body: some View {
-        List{
-            ForEach(sportVM.sports) { sport in
-                HStack {
-                    Image(systemName: sport.iconSport)
-                    Text(sport.sport)
-                }
-            }.listRowBackground(Color("Pearl Bush"))
-        }.scrollContentBackground(.hidden)
+        VStack {
+            List{
+                ForEach(sportVM.sports) { sport in
+                    HStack {
+                        Image(systemName: sport.iconSport)
+                        Text(sport.sport)
+                    }
+                }.listRowBackground(Color("Pearl Bush"))
+            }.scrollContentBackground(.hidden)
+        }
+        .onAppear{
+            Task{
+                await sportVM.fetchSport()
+            }
+        }
     }
 }
+
 
 struct ButtonEvent : View {
     

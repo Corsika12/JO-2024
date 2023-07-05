@@ -38,6 +38,7 @@ struct JO_PARIS_2024App: App {
                         userVM.getAthlete(athleteVM.athletes)
                     }
                 }
+            
         }
     }
 }
