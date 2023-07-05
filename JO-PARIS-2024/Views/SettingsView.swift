@@ -17,7 +17,7 @@ struct SettingsView: View {
     var body: some View {
         
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 
                 Color("Zeus")
                 
@@ -72,6 +72,7 @@ struct SettingsView: View {
                     .padding()
                 }
             }
+            
             //            .padding(.bottom, 40.0)
             .foregroundColor(.white)
             //            .fixedSize(horizontal: true, vertical: true)// adapter la taille de la modale à son contenu ???
