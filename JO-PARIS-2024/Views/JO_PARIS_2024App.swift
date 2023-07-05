@@ -20,6 +20,8 @@ struct JO_PARIS_2024App: App {
     @StateObject var countryVM: CountryViewModel = CountryViewModel()
     @StateObject var sportVM: SportViewModel = SportViewModel()
     @StateObject var athleteVM: AthleteViewModel = AthleteViewModel()
+    @StateObject var eventVM: EventViewModel = EventViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -27,15 +29,18 @@ struct JO_PARIS_2024App: App {
                 .environmentObject(countryVM)
                 .environmentObject(sportVM)
                 .environmentObject(athleteVM)
+                .environmentObject(eventVM)
                 .onAppear{
                     Task{
                         await sportVM.fetchSport()
                         await athleteVM.fetchAthlete()
                         await countryVM.fetchCountry()
                         await userVM.fetchUser()
+                        await eventVM.fetchEvents()
                         userVM.getCountries(countryVM.countries)
                         userVM.getSport(sportVM.sports)
                         userVM.getAthlete(athleteVM.athletes)
+                        eventVM.getSportEvent(sportVM.sports)
                     }
                 }
             

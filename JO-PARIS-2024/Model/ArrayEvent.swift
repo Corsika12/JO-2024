@@ -2,13 +2,60 @@
 //  ArrayEvents.swift
 //  JO-PARIS-2024
 //
-//  Created by M on 21/06/2023.
+//  Created by Seraphin on 21/06/2023.
 //
 
 import Foundation
 
-// Structure des événements
+struct Event: Identifiable, Codable {
+    var id = ""
+    
+    var epreuve: String
+    
+    var lieu: String // Site de l'évènement (ex : Site d’escalade du Bourget) ;
+    
+    var sport: [String] // Discipline (ex : BMX freestyle)
+    
+//    var iconSport : String
+    
+    var date: String // Date de la compétition
+    
+    var sportArray : [Sport] = []
 
+    var formatedDate : Date {
+        print(date)
+        let newFormatter = ISO8601DateFormatter()
+        newFormatter.formatOptions.insert(.withFractionalSeconds)
+        return newFormatter.date(from: date) ?? Date()
+    }
+    
+    enum CodingKeys: String, CodingKey {
+
+        case epreuve
+
+        case lieu
+        
+        case sport
+        
+        case date
+    }
+}
+
+var userLocale = Locale.autoupdatingCurrent
+
+var userCalendar = Calendar.autoupdatingCurrent
+
+let dateRange : ClosedRange<Date> = {
+    let calendar = Calendar.autoupdatingCurrent
+    let startComponents = DateComponents(year: 2024, month: 7, day: 26)
+    let endComponents = DateComponents(year: 2024, month : 9, day: 8)
+    return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
+}()
+
+
+
+// Structure des événements
+/*
 struct Event: Identifiable {
     var id: UUID = UUID()
     var sport: Sport // Discipline (ex : BMX freestyle)
@@ -24,15 +71,9 @@ struct Event: Identifiable {
     // Voir pour les scores, podiums... ?
 }
 
-var userLocale = Locale.autoupdatingCurrent
-var userCalendar = Calendar.autoupdatingCurrent
 
-let dateRange : ClosedRange<Date> = {
-    let calendar = Calendar.autoupdatingCurrent
-    let startComponents = DateComponents(year: 2024, month: 7, day: 26)
-    let endComponents = DateComponents(year: 2024, month : 9, day: 8)
-    return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
-}()
+
+
 
 var climbing0Components = DateComponents(
     year: 2024,
@@ -66,7 +107,8 @@ var handball0 = Event(sport: handball, epreuve: "Demi-finale", lieu: "Lille", aw
 
 
 var events : [Event] = [boxe0, climbing0, handball0, tennis0]
-
+*/
+ 
 /* --------  Tuto  --------
  
  // Tuto à étudier : http://swift-tuto.fr/524/les-dates-en-swift/

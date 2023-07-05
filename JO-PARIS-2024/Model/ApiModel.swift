@@ -97,3 +97,26 @@ struct SportRecord: Codable {
     var id: String?
     let fields: Sport
 }
+
+struct EventResponse: Codable {
+    let records: [EventRecord]
+
+    var events: [Event] {
+        return records.map { rec in
+            var event = rec.fields
+            event.id = rec.id ?? "EF12030JF320"
+            return event
+        }
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case records
+    }
+}
+
+// MARK: - Record
+struct EventRecord: Codable {
+    var id: String?
+    let fields: Event
+}
+

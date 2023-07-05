@@ -7,19 +7,12 @@
 
 import Foundation
 
-
-
 class AthleteViewModel: ObservableObject {
-
-
 
     @Published var athletes: [Athlete] = []
 
 //    [lorenzoMusetti] //  tableau formé à partir de la struct Athlete
 
-    
-
-    
 
     func fetchAthlete() async {
 

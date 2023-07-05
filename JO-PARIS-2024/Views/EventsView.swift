@@ -3,16 +3,16 @@
 //  JO-PARIS-2024
 //
 //  Created by Seraphin on 21/06/2023.
-//
+// --------  Ecran des évènements avec calendrier (Date Picker)  --------
 
 import SwiftUI
 
-// --------  Ecran des évènements avec calendrier (Date Picker)  --------
-// by Séraphin
+
 
 struct EventsView: View {
     
-    @StateObject var vm : EventVM = EventVM(sport: false, date: false)
+    @EnvironmentObject var eventVM: EventViewModel
+    //    @StateObject var vm : EventVM = EventVM(sport: false, date: false)
     
     var body: some View {
         VStack {
@@ -29,36 +29,39 @@ struct EventsView: View {
             
             HStack {
                 Spacer()
-                ButtonEvent(txt: "Dates", isPresented: $vm.date)
+                ButtonEvent(txt: "Dates", isPresented: $eventVM.date)
                 Spacer()
-                ButtonEvent(txt: "Sport", isPresented: $vm.sport)
+                ButtonEvent(txt: "Sport", isPresented: $eventVM.sport)
                 Spacer()
             }
-            .tint(Color("Apache"))
-            
-            if vm.sport {
-                SportListView()
-            } else {
-                EventListView()
-            }
-            
-            Spacer()
-            
-            MapSportsView()
-                .tint(Color("Apache"))
         }
+        .tint(Color("Apache"))
+        
+        /*
+         if eventVM.sport {
+         SportListView()
+         } else {
+         EventListView()
+         }
+         */
+        
+        Spacer()
+        
+        MapSportsView()
+            .tint(Color("Apache"))
     }
 }
-
 
 
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
         EventsView()
-            .environmentObject(SportViewModel())
+            .environmentObject(EventViewModel())
     }
 }
+
+
 
 struct SportListView: View {
     
