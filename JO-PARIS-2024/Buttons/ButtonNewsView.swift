@@ -51,18 +51,19 @@ struct ButtonNewsView: View {
                             stops: [
                                 Gradient.Stop(color: .black.opacity(0), location: 0.00),
                                 Gradient.Stop(color: .black, location: 1.00),],
-                            startPoint: UnitPoint(x: 0.5, y: 0),
+                            startPoint: UnitPoint(x: 0.5, y: -0.2),
                             endPoint: UnitPoint(x: 0.5, y: 1)))
                     .cornerRadius(26)
                     .offset(y: 80)
                 
                 //                    Spacer()
                 Text(textFavori)
+                    .frame(width: 300, height: 30)
                     .font(Font.custom("Paris2024-Variable", size: 27))
                     .bold()
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
-                    .offset(y: 100)
+                    .offset(y: 80)
                 
             }
         }
