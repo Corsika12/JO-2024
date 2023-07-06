@@ -64,6 +64,7 @@ struct AddAthleteView: View {
                             Text(athlete.nameAthlete)
                         }
                     }
+                    .tint(Color("Zeus")) // Color list
                 }
             }
         }

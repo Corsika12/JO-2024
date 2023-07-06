@@ -65,6 +65,7 @@ struct AddCountryView: View {
                         }
 
                     }
+                    .tint(Color("Zeus")) // Color list
 
                     
 

@@ -63,7 +63,7 @@ struct AddSportView: View {
                         }
 
                     }
-
+                    .tint(Color("Zeus")) // Color list
                 }
 
             }
