@@ -336,4 +336,14 @@ class UserViewModel: ObservableObject {
         }
         
     }
+    
+    func removeCountry(removeCountry: Country) {
+                users[0].favoriteCountry.removeAll(where: { $0 == removeCountry.id })
+            }
+        func removeSport(removeSport: Sport) {
+                users[0].favoriteSport.removeAll(where: { $0 == removeSport.id })
+            }
+        func removeAthlete(removeAthlete: Athlete) {
+                users[0].favoriteAthlete.removeAll(where: { $0 == removeAthlete.id })
+            }
 }

@@ -19,7 +19,7 @@ struct ButtonEventView : View {
                 Text("Sélectionner un ou plusieurs sports ici")
                     .padding()
                     
-            }.padding(.leading, 16)
+            }.padding(.horizontal, 16)
                 .padding(.trailing, 0)
                 .padding(.vertical, 0)
 

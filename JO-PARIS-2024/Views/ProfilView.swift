@@ -16,6 +16,7 @@ struct ProfilView: View {
     @EnvironmentObject var athleteVM: AthleteViewModel
     @EnvironmentObject var countryVM: CountryViewModel
     @EnvironmentObject var userVM: UserViewModel
+    @AppStorage("deleteStuff") var deleteStuff: Int = 1
     
     var body: some View {
         NavigationView() {

@@ -27,6 +27,6 @@ struct CountryProfilView: View {
 
 struct CountryProfilView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryProfilView(flagCountry: italy.flagCountry, country: italy.country)
+        CountryProfilView(flagCountry: "260-italy", country: "")
     }
 }

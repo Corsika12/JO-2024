@@ -28,6 +28,7 @@ struct ContentView_Previews:  PreviewProvider {
             .environmentObject(CountryViewModel())
             .environmentObject(SportViewModel())
             .environmentObject(AthleteViewModel())
+            .environmentObject(EventViewModel())
     }
 }
 

@@ -53,11 +53,11 @@ struct EventsView: View {
             
             //            MapSportsView()
             /*
-            MapSportsView()
-            .tint(Color("Apache"))
-            .padding(.horizontal, 24)
-            .padding(.top, 40)
-            */
+             MapSportsView()
+             .tint(Color("Apache"))
+             .padding(.horizontal, 24)
+             .padding(.top, 40)
+             */
             
         } //fin vstack
         .tint(Color("Apache"))
@@ -126,6 +126,8 @@ struct SportListView: View {
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
         EventsView()
+            .environmentObject(SportViewModel())
+            .environmentObject(EventViewModel())
     }
 }
 

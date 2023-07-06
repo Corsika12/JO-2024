@@ -69,7 +69,8 @@ struct TabBarView_Previews: PreviewProvider {
         TabBarView()
             .environmentObject(UserViewModel())
             .environmentObject(CountryViewModel())
-            .environmentObject(SportViewModel())
             .environmentObject(AthleteViewModel())
+            .environmentObject(SportViewModel())
+            .environmentObject(EventViewModel())
     }
 }

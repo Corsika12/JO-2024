@@ -9,126 +9,124 @@ import SwiftUI
 
 
 struct AddCountryView: View {
-
     
-
     @AppStorage("addingStuff") var addingStuff : Int = 0
-
-    @EnvironmentObject var userVM: UserViewModel
-
-    @EnvironmentObject var countryVM: CountryViewModel
-
+    @AppStorage("deleteStuff") var deleteStuff: Int = 1
     
-
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var countryVM: CountryViewModel
+    
+    
     var body: some View {
-
+        
         VStack{
-
+            
             List{
-
+                
                 ForEach(countryVM.countries){
-
-                    country in
-
                     
-
+                    country in
+                    
                     Button {
-
-                        print("add Coutry : \(country.id)")
-
-                        Task {
-
-                            let user = userVM.users[0]
-
-                            userVM.addCountry (addCountry: country)
-
-                            await userVM.updateUser()
-
-                            addingStuff += 1
-
-                            print(userVM.users[0].favoriteCountry)}
-
-                    } label: {
-
-                        HStack {
-
-                            Image(country.flagCountry)
-
-                                .resizable()
-
-                                .scaledToFill()
-
-                                .frame(width:80,height:80)
-
-                            Text(country.country)
-
+                        
+                        if userVM.users[0].favoriteCountry.contains(country.id) {
+                            userVM.removeCountry(removeCountry: country)
+                        } else {
+                            userVM.addCountry(addCountry: country)
                         }
-
+                        Task {
+                            await userVM.updateUser()
+                        }
+                        addingStuff += 1
+                        deleteStuff -= 1
+                        
+                    } label: {
+                        
+                        HStack {
+                            
+                            Image(country.flagCountry)
+                            
+                                .resizable()
+                            
+                                .scaledToFill()
+                            
+                                .frame(width:80,height:80)
+                            
+                            Text(country.country)
+                            Spacer()
+                            if userVM.users[0].favoriteCountry.contains(country.id) {
+                                                        Image(systemName: "checkmark")
+                                    .foregroundColor(Color("Apache"))
+                                    .padding(.trailing, 16)
+                                                    }
+                            
+                        }
+                        
                     }
                     .tint(Color("Zeus")) // Color list
-
                     
-
-//                                        HStack {
-
-//                                            Image(country.flagCountry)
-
-//                                                .resizable()
-
-//                                                .scaledToFill()
-
-//                                            .frame(width:80,height:80)
-
-//                                            Text(country.country)
-
-//                                        }
-
-//                                        .onTapGesture {
-
-//                                            userVM.addCountry(currentUser: userVM.users[0], addCountry: country)
-
-//                                        }
-
+                    
+                    
+                    //                                        HStack {
+                    
+                    //                                            Image(country.flagCountry)
+                    
+                    //                                                .resizable()
+                    
+                    //                                                .scaledToFill()
+                    
+                    //                                            .frame(width:80,height:80)
+                    
+                    //                                            Text(country.country)
+                    
+                    //                                        }
+                    
+                    //                                        .onTapGesture {
+                    
+                    //                                            userVM.addCountry(currentUser: userVM.users[0], addCountry: country)
+                    
+                    //                                        }
+                    
                 }
-
+                
             }
-
+            
         }
-
-//        onAppear{
-
-//            Task{
-
-//                //                await sportVM.fetchSport()
-
-//                //                await athleteVM.fetchAthlete()
-
-//                await countryVM.fetchCountry()
-
-//                await userVM.fetchUser()
-
-//                userVM.getCountries(countryVM.countries)
-
-//            }
-
-//        }
-
+        
+        //        onAppear{
+        
+        //            Task{
+        
+        //                //                await sportVM.fetchSport()
+        
+        //                //                await athleteVM.fetchAthlete()
+        
+        //                await countryVM.fetchCountry()
+        
+        //                await userVM.fetchUser()
+        
+        //                userVM.getCountries(countryVM.countries)
+        
+        //            }
+        
+        //        }
+        
     }
-
+    
 }
 
 
 
 struct CountryListView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
-
+        
         AddCountryView()
-
+        
             .environmentObject(UserViewModel())
-
+        
             .environmentObject(CountryViewModel())
-
+        
     }
-
+    
 }

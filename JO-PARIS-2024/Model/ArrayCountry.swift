@@ -36,6 +36,7 @@ struct Country: Identifiable, Codable {
 }
 
 
+/*
 
 let italy = Country(country: "Italie",continent: "Europe", codeCountry: "IT", flagCountry: "italy")
 
@@ -47,7 +48,8 @@ let brazil = Country(country: "Brésil",continent: "Amérique du Sud", codeCount
 
 let newZeland = Country(country: "Nouvelle-Zélande", continent: "Océanie", codeCountry: "NZ", flagCountry: "new zeland")
 
-
+*/
+ 
 /* --------  To Do  --------
 
 A voir si externalisé sur Cloud Airtable ?

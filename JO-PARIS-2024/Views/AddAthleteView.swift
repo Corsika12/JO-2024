@@ -11,9 +11,9 @@ import SwiftUI
 struct AddAthleteView: View {
     
     @AppStorage("addingStuff") var addingStuff : Int = 0
+    @AppStorage("deleteStuff") var deleteStuff: Int = 1
     
     @EnvironmentObject var userVM: UserViewModel
-    
     @EnvironmentObject var athleteVM: AthleteViewModel
     
     
@@ -32,19 +32,17 @@ struct AddAthleteView: View {
                     
                     Button {
                         
-                        Task{
-                            
-                            let user = userVM.users[0]
-                            
-                            userVM.addAthlete (addAthlete: athlete)
-                            
-                            await userVM.updateUser()
-                            
-                            addingStuff += 1
-                            
-                            print(userVM.users[0].favoriteAthlete)
-                            
+                        //                        print("add Athlete: (athlete.id)")
+                        if userVM.users[0].favoriteAthlete.contains(athlete.id) {
+                            userVM.removeAthlete(removeAthlete: athlete)
+                        } else {
+                            userVM.addAthlete(addAthlete: athlete)
                         }
+                        Task {
+                            await userVM.updateUser()
+                        }
+                        addingStuff += 1
+                        deleteStuff -= 1
                         
                     } label: {
                         
@@ -62,6 +60,13 @@ struct AddAthleteView: View {
                                 Text("chargement photo d'Athlete")
                             }
                             Text(athlete.nameAthlete)
+                            
+                            Spacer()
+                            if userVM.users[0].favoriteAthlete.contains(athlete.id) {
+                                                        Image(systemName: "checkmark")
+                                    .foregroundColor(Color("Apache"))
+                                    .padding(.trailing, 16)
+                                                    }
                         }
                     }
                     .tint(Color("Zeus")) // Color list
@@ -80,11 +85,6 @@ struct AddAthleteView_Previews: PreviewProvider {
         AddAthleteView()
         
             .environmentObject(AthleteViewModel())
-        
             .environmentObject(UserViewModel())
-        
-        
-        
     }
-    
 }
