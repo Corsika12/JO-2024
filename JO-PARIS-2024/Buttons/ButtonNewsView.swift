@@ -50,10 +50,10 @@ struct ButtonNewsView: View {
                         LinearGradient(
                             stops: [
                                 Gradient.Stop(color: .black.opacity(0), location: 0.00),
-                                Gradient.Stop(color: .black, location: 1.00),],
-                            startPoint: UnitPoint(x: 0.5, y: -0.2),
-                            endPoint: UnitPoint(x: 0.5, y: 1)))
-                    .cornerRadius(26)
+                                Gradient.Stop(color: .black.opacity(1.0), location: 1.00),],
+                            startPoint: UnitPoint(x: 0.2, y: 0),
+                            endPoint: UnitPoint(x: 0.2, y: 1)))
+                    .cornerRadius(26, corners: [.bottomLeft, .bottomRight])
                     .offset(y: 80)
                 
                 //                    Spacer()
@@ -61,16 +61,18 @@ struct ButtonNewsView: View {
                     .frame(width: 300, height: 50)
                     .font(Font.custom("Paris2024-Variable", size: 20))
                     .bold()
-                // Alignement du texte à gauche avec (.leading)
                     .multilineTextAlignment(.center)
-//                    .padding(.leading, -16)
                     .foregroundColor(.white)
                     .offset(y: 80)
-                    
                 
             }
         }
     } // fin Zstack
+}
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
 }
 
 
@@ -81,5 +83,16 @@ struct ButtonNewsView_Previews: PreviewProvider {
             .environmentObject(CountryViewModel())
             .environmentObject(AthleteViewModel())
             .environmentObject(SportViewModel())
+    }
+}
+
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
 }
