@@ -58,12 +58,15 @@ struct ButtonNewsView: View {
                 
                 //                    Spacer()
                 Text(textFavori)
-                    .frame(width: 300, height: 30)
-                    .font(Font.custom("Paris2024-Variable", size: 27))
+                    .frame(width: 300, height: 50)
+                    .font(Font.custom("Paris2024-Variable", size: 20))
                     .bold()
+                // Alignement du texte à gauche avec (.leading)
                     .multilineTextAlignment(.center)
+//                    .padding(.leading, -16)
                     .foregroundColor(.white)
                     .offset(y: 80)
+                    
                 
             }
         }

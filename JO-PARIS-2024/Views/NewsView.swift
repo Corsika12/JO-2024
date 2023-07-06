@@ -32,6 +32,7 @@ struct NewsView: View {
                         }
                         .padding()
                     }
+                    
                     Rectangle()
                         .foregroundColor(.white)
                         .frame(width: 210, height: 20)
@@ -54,9 +55,6 @@ struct NewsView: View {
                     .padding()
                 }
             }
-            
-            
-            
             .onAppear {
                 Task {
                     await sportVM.fetchSport()
