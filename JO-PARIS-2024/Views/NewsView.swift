@@ -55,6 +55,7 @@ struct NewsView: View {
                     .padding()
                 }
             }
+            /*
             .onAppear {
                 Task {
                     await sportVM.fetchSport()
@@ -66,7 +67,7 @@ struct NewsView: View {
                     userVM.getSport(sportVM.sports)
                     userVM.getAthlete(athleteVM.athletes)
                 }
-            }
+            }*/
         }
     }
     

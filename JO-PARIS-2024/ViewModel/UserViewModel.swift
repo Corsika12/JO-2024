@@ -34,7 +34,7 @@ class UserViewModel: ObservableObject {
                             
                             let fav = fields ["favoriteCountry"] as? [String]
                             
-                            print(fav)
+//                            print(fav)
                             
                         }
                         
