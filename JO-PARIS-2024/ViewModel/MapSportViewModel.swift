@@ -7,6 +7,8 @@
 
 // MapSportsViewModel.swift
 
+
+
 import Foundation
 import MapKit
 import CoreLocation
@@ -46,6 +48,8 @@ class ReadData: ObservableObject {
             print("Failed to load and decode file: \(error)")
         }
     }
+ 
+
     
     // Format date JJ MM AAAA
     func formatFrenchDate(date: Date) -> String {
@@ -78,7 +82,7 @@ class ReadData: ObservableObject {
     }
 } // Fin de la class ReadData
 
-
+ 
 
 /* ------- TUTO  -------
  

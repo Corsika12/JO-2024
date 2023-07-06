@@ -40,7 +40,11 @@ struct MapView: UIViewRepresentable {
 }
 
 struct SportDetailView: View {
-    var sport: SportsDataModel
+//    var sport: Sports2DataModel // pour la 2ème version JSON
+//    var adressEvent : Detail2DataModel // pour la 2ème version JSON
+    
+    var sport: SportsDataModel  // pour la 1ère version JSON
+    
     // Ajoutez la variable d'état pour le type de carte
     @State private var mapType: MKMapType = .standard
     // Formatage de la date en utilisant la fonction dans MapSportsViewModel

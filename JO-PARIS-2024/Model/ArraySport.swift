@@ -13,7 +13,7 @@ import Foundation
 
 
 
-struct Sport: Identifiable, Codable {
+struct Sport: Identifiable, Codable, Equatable {
 
     var id: String = ""
 
@@ -27,7 +27,9 @@ struct Sport: Identifiable, Codable {
     
     var SportArticle: String
 
-    
+    static func ==(lhs: Sport, rhs: Sport) -> Bool {
+            return lhs.sport == rhs.sport
+        }
 
     enum CodingKeys: String, CodingKey {
 
@@ -48,9 +50,7 @@ struct Sport: Identifiable, Codable {
 
 
 
-
 let athetisme = Sport(sport: "Athlétisme", iconSport: "", SportImage: "", TitleSport: "", SportArticle: "")
-
 
 
 /*

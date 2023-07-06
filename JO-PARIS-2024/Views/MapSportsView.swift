@@ -5,6 +5,7 @@
 //  Created by M on 30/06/2023.
 //
 
+
 import SwiftUI
 import MapKit
 import CoreLocation
@@ -19,7 +20,7 @@ struct MapSportsView: View {
             VStack {
                 // Choix du sport
                 List {
-                    Section(header: Text("Sélectionnez le sport à afficher")) {
+                    Section(header: Text("Sélectionnez le sport à afficher sur la carte")) {
                         ForEach(viewModel.sportsDatas, id: \.id) { sport in
                             Button(action: {
                                 if viewModel.selectedSports.contains(sport.sports!) {
@@ -58,3 +59,5 @@ struct MapSportsView_Previews: PreviewProvider {
         MapSportsView()
     }
 }
+
+

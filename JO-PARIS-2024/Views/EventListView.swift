@@ -10,16 +10,20 @@ import SwiftUI
 struct EventListView: View {
     
     @EnvironmentObject var eventVM: EventViewModel
+    @EnvironmentObject var sportVM: SportViewModel
     
     var body: some View {
         VStack {
             List {
                 ForEach (eventVM.events){ event in
                     
-                    ForEach (event.sportArray) { sport in
+                    ForEach (event.sportArray.filter({ s in
+                        eventVM.selectedSport.contains(s) || eventVM.selectedSport.isEmpty
+                    })) { sport in
                         HStack (alignment: .top) {
-                            Image(systemName: sport.iconSport)
-                            
+                            Image(sport.iconSport)
+                                .resizable()
+                                .frame(width: 20, height: 20)
                             VStack (alignment: .leading){
                                 Text(sport.sport)
                                 Text(event.epreuve)
@@ -27,7 +31,7 @@ struct EventListView: View {
                             }
                             
                             Spacer()
-                            //                    afficher la date ici
+                            
                             VStack {
                                 Text(event.formatedDate, format: .dateTime.day().month().weekday())
                                 
@@ -35,24 +39,17 @@ struct EventListView: View {
                                     .foregroundColor(.gray)
                             }
                         }
+                        
                     }
                 }
             }.scrollContentBackground(.hidden)
         }
+        
     }
 }
-        /*
-         func sportFiltre() -> [Event] {
-         
-         print(userLocale)
-         print(userCalendar)
-         
-         return events
-         }
-         */
-        
-        struct EventListView_Previews: PreviewProvider {
-            static var previews: some View {
-                EventListView()
-            }
-        }
+
+struct EventListView_Previews: PreviewProvider {
+    static var previews: some View {
+        EventListView()
+    }
+}

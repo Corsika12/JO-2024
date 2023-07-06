@@ -59,8 +59,8 @@ class EventViewModel : ObservableObject {
         }
     }
     
-    @Published var sport: Bool = false // sert à afficher le filtre des sports
-    @Published var date: Bool = false // sert à afficher le filtre des dates (calendrier)
+    @Published var selectedSport : [Sport] = []
+    @Published var sportIsPresented: Bool = false // sert à afficher le filtre des sports
 }
 
 

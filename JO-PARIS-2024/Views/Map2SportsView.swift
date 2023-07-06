@@ -5,11 +5,13 @@
 //  Created by M on 06/07/2023.
 //
 
+/*
+
 import SwiftUI
 import MapKit
 import CoreLocation
 
-/*
+
 
 struct Map2SportsView: View {
     @ObservedObject var viewModel = Read2Data()
